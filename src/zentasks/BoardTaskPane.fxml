@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="663.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <BorderPane prefHeight="30.0" prefWidth="200.0">
+      <center>
+        <HBox alignment="CENTER_LEFT" minWidth="50.0" prefHeight="30.0" prefWidth="-1.0" spacing="10.0" BorderPane.alignment="CENTER_LEFT">
+          <children>
+            <CheckBox mnemonicParsing="false" text="" />
+            <Label text="GroupName" />
+            <StackPane prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                <Label text="9">
+                  <font>
+                    <Font size="10.0" />
+                  </font>
+                </Label>
+              </children>
+            </StackPane>
+          </children>
+          <padding>
+            <Insets left="10.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </center>
+      <right>
+        <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER_RIGHT">
+          <BorderPane.margin>
+            <Insets right="5.0" fx:id="x2" />
+          </BorderPane.margin>
+        </Button>
+      </right>
+    </BorderPane>
+    <HBox alignment="CENTER_LEFT" padding="$x1" prefHeight="30.0" prefWidth="-1.0" spacing="10.0" VBox.margin="$x2">
+      <children>
+        <CheckBox mnemonicParsing="false" text="" />
+        <Label text="ToDo" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" padding="$x1" prefHeight="30.0" prefWidth="-1.0" spacing="10.0">
+      <children>
+        <TextField prefWidth="415.0" HBox.hgrow="ALWAYS" />
+        <Label text="Label" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+        <ChoiceBox HBox.hgrow="SOMETIMES" HBox.margin="$x2">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="アイテム1" />
+              <String fx:value="アイテム2" />
+              <String fx:value="アイテム3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+      </children>
+    </HBox>
+  </children>
+</VBox>
