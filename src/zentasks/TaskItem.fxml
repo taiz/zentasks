@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="663.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="-1.0" spacing="10.0">
+      <children>
+        <CheckBox mnemonicParsing="false" text="" />
+        <Label text="ToDo" />
+      </children>
+      <padding>
+        <Insets left="10.0" fx:id="x1" />
+      </padding>
+      <VBox.margin>
+        <Insets right="5.0" fx:id="x2" />
+      </VBox.margin>
+    </HBox>
+  </children>
+</VBox>

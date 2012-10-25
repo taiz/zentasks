@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.Dashboard">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.Dashboard">
   <children>
     <BorderPane prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
@@ -48,7 +48,7 @@
                 </Polygon>
               </children>
             </HBox>
-            <VBox fx:id="tasksPane" fillWidth="true" minHeight="0.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="20.0">
+            <VBox id="tasksPane" fx:id="taskBoradsPane" fillWidth="true" minHeight="0.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="20.0">
               <children>
                 <TextField prefWidth="200.0" text="Dummy" />
               </children>
@@ -56,7 +56,7 @@
                 <Insets left="20.0" top="20.0" />
               </VBox.margin>
             </VBox>
-            <Button id="new" fx:id="newFolder" mnemonicParsing="false" text="New Folder">
+            <Button id="new" fx:id="newFolderBtn" mnemonicParsing="false" text="New Folder">
               <VBox.margin>
                 <Insets bottom="20.0" left="20.0" top="20.0" />
               </VBox.margin>
@@ -69,8 +69,8 @@
           <children>
             <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="3.0">
               <children>
-                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                <Hyperlink fx:id="dashboard" text="DASHBOARD" />
+                <ImageView id="dahshboradImage" fx:id="dahshboardImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                <Hyperlink id="dashboard" fx:id="dashboardLink" text="DASHBOARD" />
               </children>
               <VBox.margin>
                 <Insets left="5.0" right="5.0" top="10.0" />
@@ -81,7 +81,7 @@
                 <Insets left="5.0" right="5.0" />
               </VBox.margin>
             </TreeView>
-            <Button fx:id="newGroup" cancelButton="false" defaultButton="false" mnemonicParsing="false" text="New Group">
+            <Button id="newGroup" fx:id="newGroupBtn" cancelButton="false" defaultButton="false" mnemonicParsing="false" text="New Group">
               <VBox.margin>
                 <Insets bottom="20.0" left="30.0" top="10.0" />
               </VBox.margin>
