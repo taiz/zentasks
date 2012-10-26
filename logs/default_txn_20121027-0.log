@@ -1,0 +1,79 @@
+txn[1001], 00:23:53.486, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 00:23:53.509, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[23526] rows[0] name[] predicates[] bind[] 
+txn[1001], 00:30:05.694, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 00:30:05.717, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[23640] rows[1] name[] predicates[] bind[] 
+txn[1002], 00:31:09.293, delete from project where id=? and name=? and folder=? 
+txn[1002], 00:31:09.294, Binding Delete [project] where[id=1, name=Play 2.0, folder=Play framework, ] 
+txn[1002], 00:31:09.310, Deleted [Project] [1] 
+txn[1003], 00:31:22.687, insert into project (id, name, folder) values (?,?,?) 
+txn[1003], 00:31:22.687, Binding Insert [project]  set[id=1000, name=New Project, folder=NEW GROUP, ] 
+txn[1003], 00:31:22.688, Inserted [Project] [1000] 
+txn[1004], 00:31:35.181, delete from project where id=? 
+txn[1004], 00:31:35.181, Binding Delete [project] where[id=1000, ] 
+txn[1004], 00:31:35.182, Deleted [Project] [1000] 
+txn[1005], 00:31:44.143, insert into project (id, name, folder) values (?,?,?) 
+txn[1005], 00:31:44.143, Binding Insert [project]  set[id=1001, name=New Project, folder=NEW GROUP, ] 
+txn[1005], 00:31:44.144, Inserted [Project] [1001] 
+txn[1006], 00:31:53.263, insert into project (id, name, folder) values (?,?,?) 
+txn[1006], 00:31:53.263, Binding Insert [project]  set[id=1002, name=New Project, folder=NEW GROUP, ] 
+txn[1006], 00:31:53.264, Inserted [Project] [1002] 
+txn[1007], 00:32:06.790, delete from project where id=? 
+txn[1007], 00:32:06.790, Binding Delete [project] where[id=null, ] 
+txn[1007], 00:32:06.799, OptimisticLockException:Data has changed. updated [0] rows sql[delete from project where id=?] bind[Binding Delete [project] where[id=null, ]] 
+txn[1008], 00:32:10.366, insert into project (id, name, folder) values (?,?,?) 
+txn[1008], 00:32:10.366, Binding Insert [project]  set[id=1003, name=New Project, folder=Play framework, ] 
+txn[1008], 00:32:10.367, Inserted [Project] [1003] 
+txn[1009], 00:32:33.379, delete from project where id=? 
+txn[1009], 00:32:33.379, Binding Delete [project] where[id=1003, ] 
+txn[1009], 00:32:33.380, Deleted [Project] [1003] 
+txn[1010], 00:32:44.446, insert into project (id, name, folder) values (?,?,?) 
+txn[1010], 00:32:44.446, Binding Insert [project]  set[id=1004, name=dudada, folder=Play framework, ] 
+txn[1010], 00:32:44.447, Inserted [Project] [1004] 
+txn[1011], 00:34:07.887, insert into project (id, name, folder) values (?,?,?) 
+txn[1011], 00:34:07.887, Binding Insert [project]  set[id=1005, name=New Project, folder=Pengium, ] 
+txn[1011], 00:34:07.888, Inserted [Project] [1005] 
+txn[1012], 00:34:25.889, delete from project where id=? 
+txn[1012], 00:34:25.889, Binding Delete [project] where[id=1005, ] 
+txn[1012], 00:34:25.890, Deleted [Project] [1005] 
+txn[1001], 00:36:16.941, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 00:36:16.963, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[22030] rows[3] name[] predicates[] bind[] 
+txn[1002], 00:36:39.076, delete from project where id=? and name=? and folder=? 
+txn[1002], 00:36:39.076, Binding Delete [project] where[id=1002, name=New Project, folder=NEW GROUP, ] 
+txn[1002], 00:36:39.081, Deleted [Project] [1002] 
+txn[1003], 00:36:43.218, delete from project where id=? and name=? and folder=? 
+txn[1003], 00:36:43.218, Binding Delete [project] where[id=1001, name=New Project, folder=NEW GROUP, ] 
+txn[1003], 00:36:43.220, Deleted [Project] [1001] 
+txn[1001], 00:38:01.182, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 00:38:01.204, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[21014] rows[1] name[] predicates[] bind[] 
+txn[1002], 00:38:20.648, insert into project (id, name, folder) values (?,?,?) 
+txn[1002], 00:38:20.648, Binding Insert [project]  set[id=1020, name=New Project, folder=NEW GROUP, ] 
+txn[1002], 00:38:20.650, Inserted [Project] [1020] 
+txn[1003], 00:38:49.456, delete from project where id=? 
+txn[1003], 00:38:49.456, Binding Delete [project] where[id=1020, ] 
+txn[1003], 00:38:49.459, Deleted [Project] [1020] 
+txn[1004], 00:38:58.149, insert into project (id, name, folder) values (?,?,?) 
+txn[1004], 00:38:58.149, Binding Insert [project]  set[id=1021, name=New Project, folder=NEW GROUP, ] 
+txn[1004], 00:38:58.151, Inserted [Project] [1021] 
+txn[1005], 00:39:15.065, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1005], 00:39:15.067, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[1513] rows[2] name[] predicates[] bind[] 
+txn[1006], 00:39:18.020, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1006], 00:39:18.021, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[1000] rows[2] name[] predicates[] bind[] 
+txn[1007], 00:39:24.432, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1007], 00:39:24.433, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[1082] rows[2] name[] predicates[] bind[] 
+txn[1008], 00:39:46.848, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1008], 00:39:46.849, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[1196] rows[2] name[] predicates[] bind[] 
+txn[1009], 00:39:48.746, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1009], 00:39:48.746, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[674] rows[2] name[] predicates[] bind[] 
+txn[1010], 00:39:51.277, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1010], 00:39:51.277, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[560] rows[2] name[] predicates[] bind[] 
+txn[1011], 00:39:52.016, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1011], 00:39:52.017, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[874] rows[2] name[] predicates[] bind[] 
+txn[1012], 00:39:52.551, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1012], 00:39:52.552, FindMany type[Project] origin[GZ9o8.BWY1YJ.tXd9c] exeMicros[900] rows[2] name[] predicates[] bind[] 
+txn[1013], 00:40:11.027, insert into project (id, name, folder) values (?,?,?) 
+txn[1013], 00:40:11.027, Binding Insert [project]  set[id=1022, name=New Project, folder=NEW GROUP2, ] 
+txn[1013], 00:40:11.029, Inserted [Project] [1022] 
+txn[1001], 00:44:03.628, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 00:44:03.650, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[22255] rows[3] name[] predicates[] bind[] 
+txn[1001], 00:49:52.632, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 00:49:52.654, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[21999] rows[3] name[] predicates[] bind[] 

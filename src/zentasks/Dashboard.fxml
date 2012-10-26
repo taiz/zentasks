@@ -70,7 +70,7 @@
             <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="3.0">
               <children>
                 <ImageView id="dahshboradImage" fx:id="dahshboardImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                <Hyperlink id="dashboard" fx:id="dashboardLink" text="DASHBOARD" />
+                <Hyperlink id="dashboard" fx:id="dashboardLink" onAction="#reloadProjectBoard" text="DASHBOARD" />
               </children>
               <VBox.margin>
                 <Insets left="5.0" right="5.0" top="10.0" />
@@ -81,7 +81,7 @@
                 <Insets left="5.0" right="5.0" />
               </VBox.margin>
             </TreeView>
-            <Button id="newGroup" fx:id="newGroupBtn" cancelButton="false" defaultButton="false" mnemonicParsing="false" text="New Group">
+            <Button id="newGroup" fx:id="newGroupBtn" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#addNewProjectGroup" text="New Group">
               <VBox.margin>
                 <Insets bottom="20.0" left="30.0" top="10.0" />
               </VBox.margin>
@@ -92,7 +92,7 @@
       <top>
         <GridPane BorderPane.margin="$x2">
           <children>
-            <HBox id="title" fx:id="pageTitle" alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <HBox id="title" fx:id="pageTitle" alignment="CENTER" onMouseClicked="#reloadAll" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
               <children>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-zen" text="ZEN">
                   <font>
