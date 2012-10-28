@@ -69,7 +69,7 @@ public class Dashboard implements Initializable {
     }
     
     @FXML
-    private TreeView<GridPane> projectsTree;
+    private TreeView projectsTree;
 
     // Call from newGroupBtn (On Action)
     @FXML
@@ -80,11 +80,11 @@ public class Dashboard implements Initializable {
     }
 
     private void buildProjectTree() {
-        TreeItem<GridPane> rootNode = new TreeItem<GridPane>();
+        TreeItem rootNode = new TreeItem();
         List<Project> projects = Project.findAll();
         for (Project project : projects) {
             boolean found = false;
-            for (TreeItem treeItem : rootNode.getChildren()) {
+            for (Object treeItem : rootNode.getChildren()) {
                 if (!(treeItem instanceof ProjectGroupItem)) continue;
                 ProjectGroupItem groupItem = (ProjectGroupItem)treeItem;
                 if (groupItem.getGroupName().equals(project.getFolder())) {
@@ -110,7 +110,7 @@ public class Dashboard implements Initializable {
         projectsTree.getRoot().getChildren().remove(groupItem);
     }
 
-    private class ProjectGroupItem extends TreeItem<GridPane> {
+    private class ProjectGroupItem extends TreeItem<BorderPane> {
         private StringProperty groupName = new SimpleStringProperty();
         private ContextMenu settingMenu;
 
@@ -118,38 +118,31 @@ public class Dashboard implements Initializable {
 
         public ProjectGroupItem(String groupName) {
             this.groupName.set(groupName);
-            this.setValue(createGridPane());
+            this.setValue(createPane());
             this.settingMenu = createSettingMenu();
         }
 
         public String getGroupName() { return this.groupName.get(); }
         
-        private GridPane createGridPane() {
-            ColumnConstraints[] col = new ColumnConstraints[2];
-            col[0] = ColumnConstraintsBuilder.create()
-                    .hgrow(Priority.ALWAYS).prefWidth(100).build();
-            col[1] = ColumnConstraintsBuilder.create()
-                    .hgrow(Priority.NEVER).prefWidth(50).build();
-            GridPane grid = GridPaneBuilder.create()
-                    .columnConstraints(col)
-                    .build();
+        private BorderPane createPane() {
+            BorderPane pane = BorderPaneBuilder.create().build();
             labelPane = createLabelPane();
-            grid.add(labelPane, 0, 0);
+            pane.setCenter(labelPane);
             final Button settingBtn = createButton();
-            grid.add(settingBtn, 1, 0);
-            grid.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            pane.setRight(settingBtn);
+            pane.setOnMouseEntered(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
                     settingBtn.setVisible(true);
                 }
             });
-            grid.setOnMouseExited(new EventHandler<MouseEvent>() {
+            pane.setOnMouseExited(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
                     settingBtn.setVisible(false);
                 }
             });
-            return grid;
+            return pane;
         }
 
         private StackPane labelPane;
@@ -230,7 +223,7 @@ public class Dashboard implements Initializable {
         }
     }
 
-    private class ProjectItem extends TreeItem<GridPane> {
+    private class ProjectItem extends TreeItem<BorderPane> {
         private ProjectGroupItem groupItem;
         private Project project;
 
@@ -241,35 +234,28 @@ public class Dashboard implements Initializable {
         public ProjectItem(ProjectGroupItem groupItem, Project project) {
             this.groupItem = groupItem;
             this.project = project;
-            this.setValue(createGridPane());
+            this.setValue(createPane());
         }
 
-        private GridPane createGridPane() {
-            ColumnConstraints[] col = new ColumnConstraints[2];
-            col[0] = ColumnConstraintsBuilder.create()
-                    .hgrow(Priority.ALWAYS).prefWidth(100).build();
-            col[1] = ColumnConstraintsBuilder.create()
-                    .hgrow(Priority.NEVER).prefWidth(50).build();
-            GridPane grid = GridPaneBuilder.create()
-                    .columnConstraints(col)
-                    .build();
+        private BorderPane createPane() {
+            BorderPane pane = BorderPaneBuilder.create().build();
             linkPane = createLinkPane();
-            grid.add(linkPane, 0, 0);
+            pane.setCenter(linkPane);
             final Button deleteBtn = createButton();
-            grid.add(deleteBtn, 1, 0);
-            grid.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            pane.setRight(deleteBtn);
+            pane.setOnMouseEntered(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
                     deleteBtn.setVisible(true);
                 }
             });
-            grid.setOnMouseExited(new EventHandler<MouseEvent>() {
+            pane.setOnMouseExited(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
                     deleteBtn.setVisible(false);
                 }
             });
-            return grid;
+            return pane;
         }
 
         private StackPane linkPane;
