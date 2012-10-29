@@ -1,0 +1,42 @@
+txn[1001], 10:21:11.934, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:21:11.989, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwkQ1] exeMicros[55030] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:22:57.131, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:22:57.155, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwkQ1] exeMicros[23399] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:26:26.218, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:26:26.242, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwkQ1] exeMicros[23136] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:27:41.025, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:27:41.048, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwkQ1] exeMicros[22537] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:29:15.816, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:29:15.838, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwOcY] exeMicros[22123] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:48:34.960, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:48:34.982, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[21794] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:49:55.803, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:49:55.825, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[22318] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:51:33.336, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:51:33.359, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[23182] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:52:37.620, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:52:37.642, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[21717] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:53:25.274, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:53:25.297, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[22466] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:54:26.360, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:54:26.383, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[22866] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:56:19.780, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:56:19.802, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[21653] rows[3] name[] predicates[] bind[] 
+txn[1001], 10:57:27.392, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:57:27.415, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[22310] rows[3] name[] predicates[] bind[] 
+txn[1002], 10:57:58.800, insert into project (id, name, folder) values (?,?,?) 
+txn[1002], 10:57:58.800, Binding Insert [project]  set[id=1040, name=New Project, folder=NEW GROUP2, ] 
+txn[1002], 10:57:58.809, Inserted [Project] [1040] 
+txn[1001], 10:59:13.135, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 10:59:13.157, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[21912] rows[4] name[] predicates[] bind[] 
+txn[1001], 11:00:39.194, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 11:00:39.217, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[23103] rows[4] name[] predicates[] bind[] 
+txn[1001], 11:01:18.082, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 11:01:18.105, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[22452] rows[4] name[] predicates[] bind[] 
+txn[1002], 11:01:37.983, delete from project where id=? and name=? and folder=? 
+txn[1002], 11:01:37.983, Binding Delete [project] where[id=1040, name=New Project, folder=NEW GROUP2, ] 
+txn[1002], 11:01:38.000, Deleted [Project] [1040] 
+txn[1001], 11:05:14.731, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 11:05:14.754, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[22728] rows[3] name[] predicates[] bind[] 
+txn[1001], 11:08:21.594, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 11:08:21.616, FindMany type[Project] origin[GZ9o8.BWY1YJ.CfwV9X] exeMicros[21832] rows[3] name[] predicates[] bind[] 

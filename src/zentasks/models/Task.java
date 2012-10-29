@@ -3,6 +3,7 @@ package zentasks.models;
 import javax.persistence.*;
 import com.avaje.ebean.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -28,6 +29,10 @@ public class Task {
     @ManyToOne
     private Project project;    
 
+    public static List<Task> findAll() {
+        return Ebean.find(Task.class).findList();
+    }
+       
     public Long getId() { return id; }
 
     public String getTitle() { return title; }

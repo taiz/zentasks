@@ -9,10 +9,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import zentasks.models.Project;
+import zentasks.models.Task;
 
 /**
  *
@@ -42,7 +44,7 @@ public class Dashboard implements Initializable {
 
     private void buildProjectBoard() {
         buildBreadcrumb("Dashboard", "Tasks over all projects");
-        buildTaskBoard();
+        buildTaskBoardAll();
     }
 
     private void buildProjectBoard(Project project) {
@@ -50,12 +52,15 @@ public class Dashboard implements Initializable {
         buildTaskBoard(project);
     }
     
-    private void buildTaskBoard() {}
+    private void buildTaskBoardAll() {
+        List<Task> tasks = Task.findAll();
+    }
     
     private void buildTaskBoard(Project project) {}
 
     @FXML
     private Label breadcrumbFirst;
+    
     @FXML
     private Label breadcrumbSecond;
 
@@ -98,7 +103,6 @@ public class Dashboard implements Initializable {
             groupItem.getChildren().add(new ProjectItem(groupItem, project));
         }
         rootNode.setExpanded(true);
-        projectsTree.setShowRoot(false);
         projectsTree.setRoot(rootNode);
     }
 
@@ -133,13 +137,13 @@ public class Dashboard implements Initializable {
             pane.setOnMouseEntered(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
-                    settingBtn.setVisible(true);
+                    settingBtn.setOpacity(1.0);
                 }
             });
             pane.setOnMouseExited(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
-                    settingBtn.setVisible(false);
+                    settingBtn.setOpacity(0.5);
                 }
             });
             return pane;
@@ -148,7 +152,7 @@ public class Dashboard implements Initializable {
         private StackPane labelPane;
 
         private StackPane createLabelPane() {
-            StackPane pane = StackPaneBuilder.create().build();
+            StackPane pane = StackPaneBuilder.create().alignment(Pos.CENTER_LEFT).build();
             Label groupLabel = LabelBuilder.create().build();
             groupLabel.textProperty().bind(groupName);
             pane.getChildren().add(groupLabel);
@@ -156,7 +160,7 @@ public class Dashboard implements Initializable {
         }
 
         private Button createButton() {
-            final Button btn = ButtonBuilder.create().build();
+            final Button btn = ButtonBuilder.create().opacity(0.5).build();
             btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
@@ -241,6 +245,7 @@ public class Dashboard implements Initializable {
             BorderPane pane = BorderPaneBuilder.create().build();
             linkPane = createLinkPane();
             pane.setCenter(linkPane);
+            pane.setAlignment(linkPane, Pos.CENTER_LEFT);
             final Button deleteBtn = createButton();
             pane.setRight(deleteBtn);
             pane.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -265,7 +270,8 @@ public class Dashboard implements Initializable {
             porjectName.set(project.getName());
             Hyperlink projectLink = createLink();
             projectLink.textProperty().bind(porjectName);
-            StackPane stackPane = StackPaneBuilder.create().children(projectLink).build();
+            StackPane stackPane = StackPaneBuilder.create()
+                    .alignment(Pos.CENTER_LEFT).children(projectLink).build();
             return stackPane;
         }
 

@@ -27,13 +27,14 @@ public class Project {
         this.folder = folder;
     }
     
+   public static List<Project> findAll() {
+        return Ebean.find(Project.class).findList();
+    }
+        
     public void save() { Ebean.save(this); }
 
     public void delete() { Ebean.delete(this); }
 
-    public static List<Project> findAll() {
-        return Ebean.find(Project.class).findList();
-    }
     public Integer getId() { return id; }
 
     public void setId(Integer id) { this.id = id; }
