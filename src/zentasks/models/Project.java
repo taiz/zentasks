@@ -11,7 +11,7 @@ import com.avaje.ebean.*;
 @Entity
 public class Project {
     @Id
-    private Integer id;
+    private Long id;
 
     private String name;
 
@@ -35,9 +35,9 @@ public class Project {
 
     public void delete() { Ebean.delete(this); }
 
-    public Integer getId() { return id; }
+    public Long getId() { return id; }
 
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
     
     public String getName() { return name; }
 

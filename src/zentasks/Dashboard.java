@@ -1,13 +1,22 @@
 package zentasks;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -44,7 +53,7 @@ public class Dashboard implements Initializable {
 
     private void buildProjectBoard() {
         buildBreadcrumb("Dashboard", "Tasks over all projects");
-        buildTaskBoardAll();
+        buildTaskBoard();
     }
 
     private void buildProjectBoard(Project project) {
@@ -52,11 +61,60 @@ public class Dashboard implements Initializable {
         buildTaskBoard(project);
     }
     
-    private void buildTaskBoardAll() {
-        List<Task> tasks = Task.findAll();
+    @FXML
+    private VBox taskBoradsPane;
+
+    @FXML
+    private Button newFolderBtn;
+
+    private void buildTaskBoard() {
+        taskBoradsPane.getChildren().clear();
+        try {
+            for(Entry<Project,List<Task>> entry : Task.findAllGroupByProject().entrySet()) {
+                ProjectBoard borad = createProjectBorad(entry.getKey().getName());
+                taskBoradsPane.getChildren().add(borad.getRootNode());
+            }
+        } catch (FXMLLoadException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    private void buildTaskBoard(Project project) {}
+    public void buildTaskBoard(Project project) {
+        taskBoradsPane.getChildren().clear();
+
+        Map<String,List<Task>> tasks = Task.findByProject(project);
+        List<String> folders = new ArrayList<String>(tasks.keySet());
+        Collections.sort(folders);
+        try {
+            for (String folder : folders) {
+                TaskBoard board = createTaskBoard(project, folder, tasks.get(folder));
+                taskBoradsPane.getChildren().add(board.getRootNode());
+            }
+        } catch (FXMLLoadException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private ProjectBoard createProjectBorad(String projectName) throws FXMLLoadException {
+        ProjectBoard board = (ProjectBoard)Util.loadFXML(this, "ProjectBoard.fxml");
+        board.setProjectName(projectName);
+        return board;
+    }
+
+    private TaskBoard createTaskBoard(Project project, String folderName, List<Task> tasks)
+            throws FXMLLoadException {
+        TaskBoard board = (TaskBoard)Util.loadFXML(this, "TaskBoard.fxml");
+        board.setProject(project);
+        board.setFolderName(folderName);
+        board.setTasks(tasks);
+        return board;
+    }
+
+    private TaskPane createTaskPane(Task task) throws FXMLLoadException {
+        TaskPane pane = (TaskPane)Util.loadFXML(this, "TaskPane.fxml");
+        pane.setTask(task);
+        return pane;
+    }
 
     @FXML
     private Label breadcrumbFirst;

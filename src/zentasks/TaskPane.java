@@ -1,0 +1,92 @@
+package zentasks;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.BorderPane;
+import zentasks.models.Task;
+
+/**
+ *
+ * @author miyabetaiji
+ */
+public class TaskPane implements Initializable, AccessibleRootNode {
+    private Task task;
+    private TaskBoard taskBoard;
+    private TaskItem taskItem;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        try {
+            taskItem = (TaskItem)Util.loadFXML(this, "TaskItem.fxml");
+            root.setCenter(taskItem.getRootNode());
+            BorderPane.setAlignment(taskItem.getRootNode(), Pos.CENTER_LEFT);
+            doneProperty = doneCheckBox.selectedProperty();
+            //doneProperty.addListener(doneListener);
+        } catch (FXMLLoadException ex) {
+            Logger.getLogger(TaskPane.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    @FXML
+    private BorderPane root;
+
+    @Override
+    public BorderPane getRootNode() { return root; }
+
+    @FXML
+    private CheckBox doneCheckBox;
+    
+    private BooleanProperty doneProperty;
+
+    private ChangeListener<Boolean> doneListener = new ChangeListener<Boolean>() {
+        @Override
+        public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean done) {
+            task.setDone(done);
+            task.update();
+            taskBoard.taskChanged(TaskPane.this);
+        }
+    };
+
+    @FXML
+    private Button removeBtn;
+
+    // Call from removeBtn (On Action)
+    @FXML
+    private void removeTask(ActionEvent event) {
+        task.delete();
+        taskBoard.taskRemoved(this);
+    }
+    
+    // Call from Dahsborad
+    public void setTask(Task task) {
+        this.task = task;
+        taskItem.setTask(task);
+        doneProperty.set(task.isDone());
+        doneProperty.addListener(doneListener);
+    }
+
+    // Call from Dahsborad
+    public void setTaskBoard(TaskBoard taskBoard) {
+        this.taskBoard = taskBoard;
+    }
+    
+    public boolean isDone() {
+        return task.isDone();
+    }
+    
+    public void setDone(boolean done) {
+        doneProperty.set(done);
+    }
+}
+

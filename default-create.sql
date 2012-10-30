@@ -1,5 +1,5 @@
 create table project (
-  id                        integer not null,
+  id                        bigint not null,
   name                      varchar(255),
   folder                    varchar(255),
   constraint pk_project primary key (id))
@@ -11,7 +11,7 @@ create table task (
   done                      boolean,
   due_date                  timestamp,
   folder                    varchar(255),
-  project_id                integer,
+  project_id                bigint,
   constraint pk_task primary key (id))
 ;
 

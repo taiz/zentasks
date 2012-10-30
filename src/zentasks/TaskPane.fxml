@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane fx:id="root" prefHeight="30.0" prefWidth="663.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskPane">
+  <left>
+    <CheckBox id="doneCheck" fx:id="doneCheckBox" mnemonicParsing="false" text="" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
+        <Insets left="10.0" />
+      </BorderPane.margin>
+    </CheckBox>
+  </left>
+  <right>
+    <Button fx:id="removeBtn" mnemonicParsing="false" onAction="#removeTask" text="" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
+        <Insets right="5.0" />
+      </BorderPane.margin>
+    </Button>
+  </right>
+</BorderPane>

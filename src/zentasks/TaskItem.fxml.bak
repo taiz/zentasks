@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<HBox fx:id="root" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="658.0" spacing="10.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskItem">
+<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="658.0" spacing="10.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskItem">
   <children>
     <Label fx:id="titleLabel" text="ToDo" />
   </children>

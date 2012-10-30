@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="663.0" xmlns:fx="http://javafx.com/fxml">
+<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="663.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskBoard">
   <children>
     <BorderPane prefHeight="30.0" prefWidth="200.0">
       <center>
@@ -19,7 +19,7 @@
             <CheckBox id="completed" fx:id="doneCheckBox" mnemonicParsing="false" text="" />
             <StackPane fx:id="folderPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
               <children>
-                <Label id="groupName" fx:id="folderLabel" text="FolderName" />
+                <Label id="groupName" fx:id="folderLabel" text="FolderName" StackPane.alignment="CENTER_LEFT" />
               </children>
             </StackPane>
             <StackPane prefHeight="-1.0" prefWidth="-1.0">
@@ -39,7 +39,7 @@
         </HBox>
       </center>
       <right>
-        <Button id="operations" fx:id="taskOperationBtn" mnemonicParsing="false" text="" BorderPane.alignment="CENTER_RIGHT">
+        <Button id="operations" fx:id="taskOperationBtn" mnemonicParsing="false" onMouseClicked="#showMenu" text="" BorderPane.alignment="CENTER_RIGHT">
           <BorderPane.margin>
             <Insets right="5.0" fx:id="x2" />
           </BorderPane.margin>
@@ -49,7 +49,7 @@
     <VBox fx:id="taskItemsPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="0.0" />
     <HBox alignment="CENTER_LEFT" padding="$x1" prefHeight="30.0" prefWidth="-1.0" spacing="10.0">
       <children>
-        <TextField id="newTask" fx:id="newTaskText" focusTraversable="true" prefWidth="-1.0" promptText="New tasks..." HBox.hgrow="ALWAYS" />
+        <TextField id="newTask" fx:id="newTaskText" focusTraversable="true" onAction="#registerNewTask" prefWidth="-1.0" promptText="New tasks..." HBox.hgrow="ALWAYS" />
         <Label text="Label" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
         <ChoiceBox HBox.hgrow="SOMETIMES" HBox.margin="$x2">
           <items>
