@@ -1011,3 +1011,669 @@ txn[1034], 16:10:01.451, select t0.id as c0, t0.title as c1, t0.done as c2, t0.d
 txn[1034], 16:10:01.452, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7JJvg] exeMicros[913] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
 txn[1035], 16:10:02.455, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
 txn[1035], 16:10:02.457, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7JJvg] exeMicros[1357] rows[3] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1001], 17:27:34.826, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 17:27:34.850, FindMany type[Project] origin[GZ9o4.BWY1YJ.Cf3bUZ] exeMicros[24485] rows[11] name[] predicates[] bind[] 
+txn[1002], 17:27:34.886, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0 
+txn[1002], 17:27:34.890, FindMany type[Task] origin[B0B5of.BGCeS7.BNRMSg] exeMicros[4684] rows[6] name[] predicates[] bind[] 
+txn[1003], 17:27:34.899, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1003], 17:27:34.901, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRMSg] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2337] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1004], 17:27:34.926, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1004], 17:27:34.927, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRMSg] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1342] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1005], 17:27:34.950, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 17:27:34.951, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRMSg] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1277] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1006], 17:27:34.976, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 17:27:34.977, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRMSg] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1319] rows[1] name[] predicates[t0.id = ?  ] bind[7] 
+txn[1007], 17:27:35.003, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 17:27:35.005, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRMSg] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1626] rows[1] name[] predicates[t0.id = ?  ] bind[9] 
+txn[1008], 17:27:39.134, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1008], 17:27:39.136, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7JJvg] exeMicros[1761] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1001], 17:57:04.802, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 17:57:04.825, FindMany type[Project] origin[GZ9o4.BWY1YJ.Cf3p3X] exeMicros[22726] rows[11] name[] predicates[] bind[] 
+txn[1002], 17:57:04.860, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0 
+txn[1002], 17:57:04.865, FindMany type[Task] origin[B0B5of.BGCeS7.BNRLld] exeMicros[4714] rows[6] name[] predicates[] bind[] 
+txn[1003], 17:57:04.873, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1003], 17:57:04.876, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2422] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1004], 17:57:04.898, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1004], 17:57:04.900, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1475] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1005], 17:57:04.923, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 17:57:04.924, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1266] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1006], 17:57:04.951, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 17:57:04.952, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1346] rows[1] name[] predicates[t0.id = ?  ] bind[7] 
+txn[1007], 17:57:04.978, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 17:57:04.980, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1503] rows[1] name[] predicates[t0.id = ?  ] bind[9] 
+txn[1008], 17:57:08.475, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1008], 17:57:08.476, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7Iz7F] exeMicros[1673] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1009], 17:57:12.246, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1009], 17:57:12.247, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7Iz7F] exeMicros[1045] rows[0] name[] predicates[t0.project_id = ? ] bind[3] 
+txn[1010], 17:57:14.243, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1010], 17:57:14.245, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7Iz7F] exeMicros[1590] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1011], 17:57:21.866, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1011], 17:57:21.867, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7Iz7F] exeMicros[1567] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1012], 17:57:23.282, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1012], 17:57:23.283, Binding Update [task]  set[done=false, ] where[id=1000, title=Fix the documentation, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1012], 17:57:23.287, Updated [Task] [1000] 
+txn[1013], 17:57:24.947, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1013], 17:57:24.948, Binding Insert [task]  set[id=1080, title=aaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1013], 17:57:24.951, Inserted [Task] [1080] 
+txn[1014], 17:57:26.717, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1014], 17:57:26.717, Binding Insert [task]  set[id=1081, title=bbbb, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1014], 17:57:26.719, Inserted [Task] [1081] 
+txn[1015], 17:57:28.654, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1015], 17:57:28.654, Binding Update [task]  set[title=aaaa, done=true, folder=Todo, project_id=1, ] where[id=1080, ] 
+txn[1015], 17:57:28.656, Updated [Task] [1080] 
+txn[1016], 17:57:29.416, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1016], 17:57:29.416, Binding Update [task]  set[title=bbbb, done=true, folder=Todo, project_id=1, ] where[id=1081, ] 
+txn[1016], 17:57:29.418, Updated [Task] [1081] 
+txn[1017], 17:57:34.295, delete from task where id=? 
+txn[1017], 17:57:34.296, Binding Delete [task] where[id=1080, ] 
+txn[1017], 17:57:34.296, Deleted [Task] [1080] 
+txn[1018], 17:57:34.299, delete from task where id=? 
+txn[1018], 17:57:34.299, Binding Delete [task] where[id=1081, ] 
+txn[1018], 17:57:34.299, Deleted [Task] [1081] 
+txn[1019], 17:57:53.165, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1019], 17:57:53.165, Binding Insert [task]  set[id=1082, title=aaa, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1019], 17:57:53.166, Inserted [Task] [1082] 
+txn[1020], 17:58:04.768, delete from task where id=? and title=? and done=? and due_date=? and folder=? and project_id=? 
+txn[1020], 17:58:04.775, Binding Delete [task] where[id=1001, title=Prepare the beta release, done=false, dueDate=Tue Nov 15 09:00:00 JST 2011, folder=Urgent, project_id=1, ] 
+txn[1020], 17:58:04.779, Deleted [Task] [1001] 
+txn[1021], 17:58:22.860, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1021], 17:58:22.860, Binding Insert [task]  set[id=1083, title=bbbb, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1021], 17:58:22.861, Inserted [Task] [1083] 
+txn[1022], 17:58:26.056, delete from task where id=? 
+txn[1022], 17:58:26.056, Binding Delete [task] where[id=1082, ] 
+txn[1022], 17:58:26.056, Deleted [Task] [1082] 
+txn[1023], 17:58:37.083, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1023], 17:58:37.083, Binding Insert [task]  set[id=1084, title=dddddd, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1023], 17:58:37.085, Inserted [Task] [1084] 
+txn[1024], 17:58:42.074, delete from task where id=? 
+txn[1024], 17:58:42.074, Binding Delete [task] where[id=1083, ] 
+txn[1024], 17:58:42.075, Deleted [Task] [1083] 
+txn[1025], 17:58:59.419, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1025], 17:58:59.419, Binding Insert [task]  set[id=1085, title=eeeee, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1025], 17:58:59.420, Inserted [Task] [1085] 
+txn[1001], 18:03:33.305, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 18:03:33.330, FindMany type[Project] origin[GZ9o4.BWY1YJ.Cf3TUa] exeMicros[24477] rows[11] name[] predicates[] bind[] 
+txn[1002], 18:03:33.363, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0 
+txn[1002], 18:03:33.368, FindMany type[Task] origin[B0B5of.BGCeS7.BNRK26] exeMicros[5275] rows[7] name[] predicates[] bind[] 
+txn[1003], 18:03:33.376, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1003], 18:03:33.378, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2242] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1004], 18:03:33.401, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1004], 18:03:33.404, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2521] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1005], 18:03:33.427, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 18:03:33.428, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1325] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1006], 18:03:33.455, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 18:03:33.456, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1381] rows[1] name[] predicates[t0.id = ?  ] bind[7] 
+txn[1007], 18:03:33.478, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 18:03:33.480, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1758] rows[1] name[] predicates[t0.id = ?  ] bind[9] 
+txn[1008], 18:03:36.824, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1008], 18:03:36.826, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1603] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1009], 18:03:39.133, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1009], 18:03:39.135, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1712] rows[3] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1010], 18:03:44.470, delete from task where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1010], 18:03:44.470, Binding Delete [task] where[id=1084, title=dddddd, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1010], 18:03:44.473, Deleted [Task] [1084] 
+txn[1011], 18:03:44.479, delete from task where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1011], 18:03:44.479, Binding Delete [task] where[id=1085, title=eeeee, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1011], 18:03:44.480, Deleted [Task] [1085] 
+txn[1012], 18:03:57.130, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1012], 18:03:57.130, Binding Insert [task]  set[id=1100, title=aaaa, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1012], 18:03:57.132, Inserted [Task] [1100] 
+txn[1013], 18:03:59.445, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1013], 18:03:59.445, Binding Insert [task]  set[id=1101, title=bbbbb, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1013], 18:03:59.446, Inserted [Task] [1101] 
+txn[1014], 18:04:00.781, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1014], 18:04:00.781, Binding Insert [task]  set[id=1102, title=ccccc, done=false, dueDate=null, folder=Urgent, project_id=1, ] 
+txn[1014], 18:04:00.782, Inserted [Task] [1102] 
+txn[1015], 18:04:09.798, delete from task where id=? 
+txn[1015], 18:04:09.798, Binding Delete [task] where[id=1100, ] 
+txn[1015], 18:04:09.799, Deleted [Task] [1100] 
+txn[1016], 18:04:09.801, delete from task where id=? 
+txn[1016], 18:04:09.801, Binding Delete [task] where[id=1101, ] 
+txn[1016], 18:04:09.802, Deleted [Task] [1101] 
+txn[1017], 18:04:09.803, delete from task where id=? 
+txn[1017], 18:04:09.803, Binding Delete [task] where[id=1102, ] 
+txn[1017], 18:04:09.803, Deleted [Task] [1102] 
+txn[1018], 18:04:23.622, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1018], 18:04:23.623, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1029] rows[0] name[] predicates[t0.project_id = ? ] bind[3] 
+txn[1019], 18:04:24.632, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1019], 18:04:24.634, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1435] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1020], 18:04:25.643, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1020], 18:04:25.645, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[2006] rows[1] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1021], 18:04:28.497, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1021], 18:04:28.497, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[508] rows[0] name[] predicates[t0.project_id = ? ] bind[3] 
+txn[1022], 18:04:30.141, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1022], 18:04:30.141, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[733] rows[1] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1023], 18:04:32.051, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1023], 18:04:32.051, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[471] rows[0] name[] predicates[t0.project_id = ? ] bind[3] 
+txn[1001], 18:05:15.247, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 18:05:15.271, FindMany type[Project] origin[GZ9o4.BWY1YJ.Cf3TUa] exeMicros[23824] rows[11] name[] predicates[] bind[] 
+txn[1002], 18:05:15.303, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0 
+txn[1002], 18:05:15.307, FindMany type[Task] origin[B0B5of.BGCeS7.BNRK26] exeMicros[3787] rows[5] name[] predicates[] bind[] 
+txn[1003], 18:05:15.315, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1003], 18:05:15.318, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2538] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1004], 18:05:15.342, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1004], 18:05:15.343, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1410] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1005], 18:05:15.368, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 18:05:15.369, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1269] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1006], 18:05:15.395, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 18:05:15.397, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1296] rows[1] name[] predicates[t0.id = ?  ] bind[7] 
+txn[1007], 18:05:15.422, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 18:05:15.423, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRK26] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1552] rows[1] name[] predicates[t0.id = ?  ] bind[9] 
+txn[1008], 18:05:19.174, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1008], 18:05:19.176, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1444] rows[1] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1009], 18:05:26.339, delete from task where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1009], 18:05:26.339, Binding Delete [task] where[id=1000, title=Fix the documentation, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1009], 18:05:26.343, Deleted [Task] [1000] 
+txn[1010], 18:05:39.384, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1010], 18:05:39.384, Binding Insert [task]  set[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1010], 18:05:39.386, Inserted [Task] [1120] 
+txn[1011], 18:05:46.434, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1011], 18:05:46.434, Binding Insert [task]  set[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1011], 18:05:46.436, Inserted [Task] [1121] 
+txn[1012], 18:05:47.987, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1012], 18:05:47.988, Binding Update [task]  set[title=aaaaaa, done=true, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1012], 18:05:47.989, Updated [Task] [1120] 
+txn[1013], 18:05:48.969, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1013], 18:05:48.969, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1013], 18:05:48.970, Updated [Task] [1121] 
+txn[1014], 18:05:51.512, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1014], 18:05:51.513, Binding Update [task]  set[title=fewfewfew, done=false, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1014], 18:05:51.514, Updated [Task] [1121] 
+txn[1015], 18:05:52.011, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1015], 18:05:52.011, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1015], 18:05:52.013, Updated [Task] [1121] 
+txn[1016], 18:05:54.477, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1016], 18:05:54.477, Binding Update [task]  set[title=aaaaaa, done=false, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1016], 18:05:54.479, Updated [Task] [1120] 
+txn[1017], 18:05:54.481, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1017], 18:05:54.481, Binding Update [task]  set[title=fewfewfew, done=false, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1017], 18:05:54.482, Updated [Task] [1121] 
+txn[1018], 18:05:56.080, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1018], 18:05:56.082, Binding Update [task]  set[title=aaaaaa, done=true, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1018], 18:05:56.083, Updated [Task] [1120] 
+txn[1019], 18:05:56.085, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1019], 18:05:56.085, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1019], 18:05:56.087, Updated [Task] [1121] 
+txn[1020], 18:05:56.857, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1020], 18:05:56.857, Binding Update [task]  set[title=aaaaaa, done=false, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1020], 18:05:56.858, Updated [Task] [1120] 
+txn[1021], 18:05:56.860, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1021], 18:05:56.860, Binding Update [task]  set[title=fewfewfew, done=false, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1021], 18:05:56.860, Updated [Task] [1121] 
+txn[1022], 18:05:57.470, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1022], 18:05:57.470, Binding Update [task]  set[title=aaaaaa, done=true, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1022], 18:05:57.471, Updated [Task] [1120] 
+txn[1023], 18:05:57.473, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1023], 18:05:57.473, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1023], 18:05:57.474, Updated [Task] [1121] 
+txn[1024], 18:05:57.926, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1024], 18:05:57.926, Binding Update [task]  set[title=aaaaaa, done=false, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1024], 18:05:57.927, Updated [Task] [1120] 
+txn[1025], 18:05:57.929, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1025], 18:05:57.930, Binding Update [task]  set[title=fewfewfew, done=false, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1025], 18:05:57.930, Updated [Task] [1121] 
+txn[1026], 18:05:58.496, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1026], 18:05:58.496, Binding Update [task]  set[title=aaaaaa, done=true, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1026], 18:05:58.497, Updated [Task] [1120] 
+txn[1027], 18:05:58.499, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1027], 18:05:58.499, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1027], 18:05:58.499, Updated [Task] [1121] 
+txn[1028], 18:06:01.138, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1028], 18:06:01.138, Binding Insert [task]  set[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1028], 18:06:01.139, Inserted [Task] [1122] 
+txn[1029], 18:06:03.883, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1029], 18:06:03.883, Binding Update [task]  set[title=aaaaaa, done=false, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1029], 18:06:03.884, Updated [Task] [1120] 
+txn[1030], 18:06:03.886, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1030], 18:06:03.886, Binding Update [task]  set[title=fewfewfew, done=false, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1030], 18:06:03.887, Updated [Task] [1121] 
+txn[1031], 18:06:05.152, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1031], 18:06:05.152, Binding Update [task]  set[title=aaaaaa, done=true, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1031], 18:06:05.153, Updated [Task] [1120] 
+txn[1032], 18:06:05.155, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1032], 18:06:05.155, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1032], 18:06:05.155, Updated [Task] [1121] 
+txn[1033], 18:06:05.156, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1033], 18:06:05.156, Binding Update [task]  set[title=fwemkflrgre, done=true, folder=Todo, project_id=1, ] where[id=1122, ] 
+txn[1033], 18:06:05.156, Updated [Task] [1122] 
+txn[1034], 18:06:06.270, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1034], 18:06:06.270, Binding Update [task]  set[title=aaaaaa, done=false, folder=Todo, project_id=1, ] where[id=1120, ] 
+txn[1034], 18:06:06.270, Updated [Task] [1120] 
+txn[1035], 18:06:06.273, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1035], 18:06:06.273, Binding Update [task]  set[title=fewfewfew, done=false, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1035], 18:06:06.274, Updated [Task] [1121] 
+txn[1036], 18:06:06.274, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1036], 18:06:06.274, Binding Update [task]  set[title=fwemkflrgre, done=false, folder=Todo, project_id=1, ] where[id=1122, ] 
+txn[1036], 18:06:06.275, Updated [Task] [1122] 
+txn[1037], 18:06:07.320, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1037], 18:06:07.320, Binding Update [task]  set[title=fwemkflrgre, done=true, folder=Todo, project_id=1, ] where[id=1122, ] 
+txn[1037], 18:06:07.321, Updated [Task] [1122] 
+txn[1038], 18:06:08.276, update task set title=?, done=?, folder=?, project_id=? where id=? 
+txn[1038], 18:06:08.276, Binding Update [task]  set[title=fewfewfew, done=true, folder=Todo, project_id=1, ] where[id=1121, ] 
+txn[1038], 18:06:08.277, Updated [Task] [1121] 
+txn[1039], 18:06:10.786, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1039], 18:06:10.786, Binding Insert [task]  set[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1039], 18:06:10.787, Inserted [Task] [1123] 
+txn[1040], 18:29:17.208, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1040], 18:29:17.208, Binding Insert [task]  set[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1040], 18:29:17.209, Inserted [Task] [1124] 
+txn[1041], 18:29:24.672, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1041], 18:29:24.672, Binding Insert [task]  set[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1041], 18:29:24.673, Inserted [Task] [1125] 
+txn[1042], 18:29:32.320, insert into task (id, title, done, due_date, folder, project_id) values (?,?,?,?,?,?) 
+txn[1042], 18:29:32.320, Binding Insert [task]  set[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1042], 18:29:32.320, Inserted [Task] [1126] 
+txn[1043], 18:29:39.963, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1043], 18:29:39.964, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1590] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1044], 18:29:41.334, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1044], 18:29:41.336, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[2059] rows[8] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1045], 18:29:43.179, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1045], 18:29:43.181, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1646] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1046], 18:29:44.288, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1046], 18:29:44.290, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[2328] rows[8] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1047], 18:29:46.751, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1047], 18:29:46.751, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[828] rows[1] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1048], 18:29:47.844, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1048], 18:29:47.846, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7IdYF] exeMicros[1439] rows[8] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1049], 18:30:08.904, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1049], 18:30:08.905, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1049], 18:30:08.906, Updated [Task] [1120] 
+txn[1050], 18:30:08.908, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1050], 18:30:08.908, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1050], 18:30:08.910, Updated [Task] [1123] 
+txn[1051], 18:30:08.910, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1051], 18:30:08.911, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1051], 18:30:08.912, Updated [Task] [1006] 
+txn[1052], 18:30:08.913, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1052], 18:30:08.913, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1052], 18:30:08.914, Updated [Task] [1124] 
+txn[1053], 18:30:08.914, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1053], 18:30:08.914, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1053], 18:30:08.916, Updated [Task] [1125] 
+txn[1054], 18:30:08.916, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1054], 18:30:08.916, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1054], 18:30:08.917, Updated [Task] [1126] 
+txn[1055], 18:30:09.512, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1055], 18:30:09.512, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1055], 18:30:09.513, Updated [Task] [1120] 
+txn[1056], 18:30:09.515, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1056], 18:30:09.515, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1056], 18:30:09.516, Updated [Task] [1122] 
+txn[1057], 18:30:09.516, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1057], 18:30:09.516, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1057], 18:30:09.517, Updated [Task] [1121] 
+txn[1058], 18:30:09.517, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1058], 18:30:09.518, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1058], 18:30:09.518, Updated [Task] [1123] 
+txn[1059], 18:30:09.519, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1059], 18:30:09.519, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1059], 18:30:09.519, Updated [Task] [1006] 
+txn[1060], 18:30:09.520, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1060], 18:30:09.520, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1060], 18:30:09.520, Updated [Task] [1124] 
+txn[1061], 18:30:09.521, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1061], 18:30:09.521, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1061], 18:30:09.522, Updated [Task] [1125] 
+txn[1062], 18:30:09.522, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1062], 18:30:09.522, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1062], 18:30:09.523, Updated [Task] [1126] 
+txn[1063], 18:30:10.307, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1063], 18:30:10.307, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1063], 18:30:10.308, Updated [Task] [1120] 
+txn[1064], 18:30:10.310, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1064], 18:30:10.310, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1064], 18:30:10.310, Updated [Task] [1122] 
+txn[1065], 18:30:10.311, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1065], 18:30:10.311, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1065], 18:30:10.311, Updated [Task] [1121] 
+txn[1066], 18:30:10.312, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1066], 18:30:10.312, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1066], 18:30:10.313, Updated [Task] [1123] 
+txn[1067], 18:30:10.313, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1067], 18:30:10.313, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1067], 18:30:10.314, Updated [Task] [1006] 
+txn[1068], 18:30:10.314, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1068], 18:30:10.314, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1068], 18:30:10.315, Updated [Task] [1124] 
+txn[1069], 18:30:10.316, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1069], 18:30:10.316, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1069], 18:30:10.316, Updated [Task] [1125] 
+txn[1070], 18:30:10.317, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1070], 18:30:10.317, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1070], 18:30:10.317, Updated [Task] [1126] 
+txn[1071], 18:30:11.245, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1071], 18:30:11.245, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1071], 18:30:11.246, Updated [Task] [1120] 
+txn[1072], 18:30:11.248, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1072], 18:30:11.248, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1072], 18:30:11.249, Updated [Task] [1122] 
+txn[1073], 18:30:11.249, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1073], 18:30:11.249, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1073], 18:30:11.250, Updated [Task] [1121] 
+txn[1074], 18:30:11.250, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1074], 18:30:11.250, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1074], 18:30:11.251, Updated [Task] [1123] 
+txn[1075], 18:30:11.251, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1075], 18:30:11.252, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1075], 18:30:11.252, Updated [Task] [1006] 
+txn[1076], 18:30:11.253, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1076], 18:30:11.253, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1076], 18:30:11.254, Updated [Task] [1124] 
+txn[1077], 18:30:11.254, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1077], 18:30:11.254, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1077], 18:30:11.255, Updated [Task] [1125] 
+txn[1078], 18:30:11.256, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1078], 18:30:11.256, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1078], 18:30:11.256, Updated [Task] [1126] 
+txn[1079], 18:30:12.377, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1079], 18:30:12.377, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1079], 18:30:12.378, Updated [Task] [1120] 
+txn[1080], 18:30:12.380, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1080], 18:30:12.380, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1080], 18:30:12.381, Updated [Task] [1122] 
+txn[1081], 18:30:12.382, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1081], 18:30:12.382, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1081], 18:30:12.382, Updated [Task] [1121] 
+txn[1082], 18:30:12.383, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1082], 18:30:12.383, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1082], 18:30:12.383, Updated [Task] [1123] 
+txn[1083], 18:30:12.384, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1083], 18:30:12.384, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1083], 18:30:12.384, Updated [Task] [1006] 
+txn[1084], 18:30:12.385, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1084], 18:30:12.385, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1084], 18:30:12.386, Updated [Task] [1124] 
+txn[1085], 18:30:12.386, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1085], 18:30:12.386, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1085], 18:30:12.387, Updated [Task] [1125] 
+txn[1086], 18:30:12.387, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1086], 18:30:12.387, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1086], 18:30:12.388, Updated [Task] [1126] 
+txn[1087], 18:30:14.110, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1087], 18:30:14.110, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1087], 18:30:14.111, Updated [Task] [1120] 
+txn[1088], 18:30:14.113, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1088], 18:30:14.113, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1088], 18:30:14.113, Updated [Task] [1122] 
+txn[1089], 18:30:14.114, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1089], 18:30:14.114, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1089], 18:30:14.115, Updated [Task] [1121] 
+txn[1090], 18:30:14.115, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1090], 18:30:14.115, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1090], 18:30:14.116, Updated [Task] [1123] 
+txn[1091], 18:30:14.117, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1091], 18:30:14.117, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1091], 18:30:14.117, Updated [Task] [1006] 
+txn[1092], 18:30:14.118, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1092], 18:30:14.118, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1092], 18:30:14.118, Updated [Task] [1124] 
+txn[1093], 18:30:14.119, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1093], 18:30:14.119, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1093], 18:30:14.119, Updated [Task] [1125] 
+txn[1094], 18:30:14.120, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1094], 18:30:14.120, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1094], 18:30:14.120, Updated [Task] [1126] 
+txn[1095], 18:30:14.572, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1095], 18:30:14.572, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1095], 18:30:14.573, Updated [Task] [1120] 
+txn[1096], 18:30:14.575, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1096], 18:30:14.575, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1096], 18:30:14.576, Updated [Task] [1122] 
+txn[1097], 18:30:14.577, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1097], 18:30:14.577, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1097], 18:30:14.577, Updated [Task] [1121] 
+txn[1098], 18:30:14.578, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1098], 18:30:14.578, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1098], 18:30:14.578, Updated [Task] [1123] 
+txn[1099], 18:30:14.579, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1099], 18:30:14.579, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1099], 18:30:14.580, Updated [Task] [1006] 
+txn[1100], 18:30:14.580, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1100], 18:30:14.580, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1100], 18:30:14.581, Updated [Task] [1124] 
+txn[1101], 18:30:14.581, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1101], 18:30:14.581, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1101], 18:30:14.582, Updated [Task] [1125] 
+txn[1102], 18:30:14.582, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1102], 18:30:14.583, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1102], 18:30:14.583, Updated [Task] [1126] 
+txn[1103], 18:30:16.016, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1103], 18:30:16.016, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1103], 18:30:16.017, Updated [Task] [1120] 
+txn[1104], 18:30:16.019, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1104], 18:30:16.019, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1104], 18:30:16.020, Updated [Task] [1122] 
+txn[1105], 18:30:16.020, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1105], 18:30:16.020, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1105], 18:30:16.021, Updated [Task] [1121] 
+txn[1106], 18:30:16.021, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1106], 18:30:16.022, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1106], 18:30:16.022, Updated [Task] [1123] 
+txn[1107], 18:30:16.023, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1107], 18:30:16.023, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1107], 18:30:16.023, Updated [Task] [1006] 
+txn[1108], 18:30:16.024, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1108], 18:30:16.024, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1108], 18:30:16.024, Updated [Task] [1124] 
+txn[1109], 18:30:16.025, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1109], 18:30:16.025, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1109], 18:30:16.025, Updated [Task] [1125] 
+txn[1110], 18:30:16.026, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1110], 18:30:16.026, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1110], 18:30:16.026, Updated [Task] [1126] 
+txn[1111], 18:30:19.174, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1111], 18:30:19.174, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1111], 18:30:19.175, Updated [Task] [1120] 
+txn[1112], 18:30:19.178, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1112], 18:30:19.178, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1112], 18:30:19.178, Updated [Task] [1122] 
+txn[1113], 18:30:19.179, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1113], 18:30:19.179, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1113], 18:30:19.180, Updated [Task] [1121] 
+txn[1114], 18:30:19.180, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1114], 18:30:19.180, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1114], 18:30:19.181, Updated [Task] [1123] 
+txn[1115], 18:30:19.181, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1115], 18:30:19.182, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1115], 18:30:19.182, Updated [Task] [1006] 
+txn[1116], 18:30:19.183, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1116], 18:30:19.183, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1116], 18:30:19.183, Updated [Task] [1124] 
+txn[1117], 18:30:19.184, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1117], 18:30:19.184, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1117], 18:30:19.184, Updated [Task] [1125] 
+txn[1118], 18:30:19.185, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1118], 18:30:19.185, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1118], 18:30:19.185, Updated [Task] [1126] 
+txn[1119], 18:30:19.799, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1119], 18:30:19.799, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1119], 18:30:19.799, Updated [Task] [1120] 
+txn[1120], 18:30:19.801, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1120], 18:30:19.802, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1120], 18:30:19.802, Updated [Task] [1122] 
+txn[1121], 18:30:19.803, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1121], 18:30:19.803, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1121], 18:30:19.803, Updated [Task] [1121] 
+txn[1122], 18:30:19.804, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1122], 18:30:19.804, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1122], 18:30:19.804, Updated [Task] [1123] 
+txn[1123], 18:30:19.805, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1123], 18:30:19.805, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1123], 18:30:19.806, Updated [Task] [1006] 
+txn[1124], 18:30:19.806, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1124], 18:30:19.806, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1124], 18:30:19.807, Updated [Task] [1124] 
+txn[1125], 18:30:19.807, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1125], 18:30:19.807, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1125], 18:30:19.808, Updated [Task] [1125] 
+txn[1126], 18:30:19.808, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1126], 18:30:19.808, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1126], 18:30:19.809, Updated [Task] [1126] 
+txn[1127], 18:30:20.174, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1127], 18:30:20.174, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1127], 18:30:20.175, Updated [Task] [1120] 
+txn[1128], 18:30:20.177, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1128], 18:30:20.177, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1128], 18:30:20.178, Updated [Task] [1122] 
+txn[1129], 18:30:20.178, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1129], 18:30:20.178, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1129], 18:30:20.179, Updated [Task] [1121] 
+txn[1130], 18:30:20.179, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1130], 18:30:20.179, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1130], 18:30:20.180, Updated [Task] [1123] 
+txn[1131], 18:30:20.180, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1131], 18:30:20.181, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1131], 18:30:20.181, Updated [Task] [1006] 
+txn[1132], 18:30:20.182, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1132], 18:30:20.182, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1132], 18:30:20.182, Updated [Task] [1124] 
+txn[1133], 18:30:20.183, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1133], 18:30:20.183, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1133], 18:30:20.183, Updated [Task] [1125] 
+txn[1134], 18:30:20.184, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1134], 18:30:20.184, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1134], 18:30:20.184, Updated [Task] [1126] 
+txn[1135], 18:30:20.680, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1135], 18:30:20.680, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1135], 18:30:20.681, Updated [Task] [1120] 
+txn[1136], 18:30:20.683, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1136], 18:30:20.683, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1136], 18:30:20.684, Updated [Task] [1122] 
+txn[1137], 18:30:20.685, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1137], 18:30:20.685, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1137], 18:30:20.685, Updated [Task] [1121] 
+txn[1138], 18:30:20.686, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1138], 18:30:20.686, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1138], 18:30:20.686, Updated [Task] [1123] 
+txn[1139], 18:30:20.687, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1139], 18:30:20.687, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1139], 18:30:20.687, Updated [Task] [1006] 
+txn[1140], 18:30:20.688, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1140], 18:30:20.688, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1140], 18:30:20.689, Updated [Task] [1124] 
+txn[1141], 18:30:20.689, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1141], 18:30:20.689, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1141], 18:30:20.690, Updated [Task] [1125] 
+txn[1142], 18:30:20.691, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1142], 18:30:20.691, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1142], 18:30:20.691, Updated [Task] [1126] 
+txn[1143], 18:30:21.133, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1143], 18:30:21.133, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1143], 18:30:21.133, Updated [Task] [1120] 
+txn[1144], 18:30:21.136, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1144], 18:30:21.136, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1144], 18:30:21.136, Updated [Task] [1122] 
+txn[1145], 18:30:21.137, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1145], 18:30:21.137, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1145], 18:30:21.138, Updated [Task] [1121] 
+txn[1146], 18:30:21.138, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1146], 18:30:21.138, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1146], 18:30:21.139, Updated [Task] [1123] 
+txn[1147], 18:30:21.139, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1147], 18:30:21.140, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1147], 18:30:21.140, Updated [Task] [1006] 
+txn[1148], 18:30:21.141, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1148], 18:30:21.141, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1148], 18:30:21.141, Updated [Task] [1124] 
+txn[1149], 18:30:21.142, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1149], 18:30:21.142, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1149], 18:30:21.142, Updated [Task] [1125] 
+txn[1150], 18:30:21.143, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1150], 18:30:21.143, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1150], 18:30:21.143, Updated [Task] [1126] 
+txn[1151], 18:30:21.798, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1151], 18:30:21.798, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1151], 18:30:21.799, Updated [Task] [1120] 
+txn[1152], 18:30:21.801, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1152], 18:30:21.801, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1152], 18:30:21.802, Updated [Task] [1122] 
+txn[1153], 18:30:21.802, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1153], 18:30:21.802, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1153], 18:30:21.803, Updated [Task] [1121] 
+txn[1154], 18:30:21.803, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1154], 18:30:21.803, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1154], 18:30:21.804, Updated [Task] [1123] 
+txn[1155], 18:30:21.804, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1155], 18:30:21.805, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1155], 18:30:21.805, Updated [Task] [1006] 
+txn[1156], 18:30:21.806, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1156], 18:30:21.806, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1156], 18:30:21.806, Updated [Task] [1124] 
+txn[1157], 18:30:21.807, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1157], 18:30:21.807, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1157], 18:30:21.807, Updated [Task] [1125] 
+txn[1158], 18:30:21.808, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1158], 18:30:21.808, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1158], 18:30:21.809, Updated [Task] [1126] 
+txn[1159], 18:30:22.510, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1159], 18:30:22.510, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1159], 18:30:22.511, Updated [Task] [1120] 
+txn[1160], 18:30:22.513, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1160], 18:30:22.513, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1160], 18:30:22.514, Updated [Task] [1122] 
+txn[1161], 18:30:22.515, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1161], 18:30:22.515, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1161], 18:30:22.515, Updated [Task] [1121] 
+txn[1162], 18:30:22.516, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1162], 18:30:22.516, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1162], 18:30:22.516, Updated [Task] [1123] 
+txn[1163], 18:30:22.517, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1163], 18:30:22.517, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1163], 18:30:22.518, Updated [Task] [1006] 
+txn[1164], 18:30:22.518, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1164], 18:30:22.518, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1164], 18:30:22.519, Updated [Task] [1124] 
+txn[1165], 18:30:22.519, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1165], 18:30:22.520, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1165], 18:30:22.520, Updated [Task] [1125] 
+txn[1166], 18:30:22.521, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1166], 18:30:22.521, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1166], 18:30:22.521, Updated [Task] [1126] 
+txn[1167], 21:25:59.535, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1167], 21:25:59.538, Binding Update [task]  set[done=false, ] where[id=1120, title=aaaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1167], 21:25:59.574, Updated [Task] [1120] 
+txn[1168], 21:25:59.578, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1168], 21:25:59.579, Binding Update [task]  set[done=false, ] where[id=1122, title=fwemkflrgre, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1168], 21:25:59.579, Updated [Task] [1122] 
+txn[1169], 21:25:59.582, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1169], 21:25:59.583, Binding Update [task]  set[done=false, ] where[id=1121, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1169], 21:25:59.583, Updated [Task] [1121] 
+txn[1170], 21:25:59.584, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1170], 21:25:59.584, Binding Update [task]  set[done=false, ] where[id=1123, title=fewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1170], 21:25:59.585, Updated [Task] [1123] 
+txn[1171], 21:25:59.586, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1171], 21:25:59.586, Binding Update [task]  set[done=false, ] where[id=1006, title=hhhllll, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1171], 21:25:59.587, Updated [Task] [1006] 
+txn[1172], 21:25:59.588, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1172], 21:25:59.588, Binding Update [task]  set[done=false, ] where[id=1124, title=aaaaa, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1172], 21:25:59.589, Updated [Task] [1124] 
+txn[1173], 21:25:59.590, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1173], 21:25:59.591, Binding Update [task]  set[done=false, ] where[id=1125, title=fewfewfew, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1173], 21:25:59.591, Updated [Task] [1125] 
+txn[1174], 21:25:59.592, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1174], 21:25:59.592, Binding Update [task]  set[done=false, ] where[id=1126, title=adwadsada, done=true, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1174], 21:25:59.593, Updated [Task] [1126] 
+txn[1175], 21:26:00.018, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1175], 21:26:00.018, Binding Update [task]  set[done=true, ] where[id=1120, title=aaaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1175], 21:26:00.019, Updated [Task] [1120] 
+txn[1176], 21:26:00.019, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1176], 21:26:00.020, Binding Update [task]  set[done=true, ] where[id=1122, title=fwemkflrgre, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1176], 21:26:00.021, Updated [Task] [1122] 
+txn[1177], 21:26:00.022, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1177], 21:26:00.022, Binding Update [task]  set[done=true, ] where[id=1121, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1177], 21:26:00.022, Updated [Task] [1121] 
+txn[1178], 21:26:00.023, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1178], 21:26:00.024, Binding Update [task]  set[done=true, ] where[id=1123, title=fewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1178], 21:26:00.025, Updated [Task] [1123] 
+txn[1179], 21:26:00.026, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1179], 21:26:00.026, Binding Update [task]  set[done=true, ] where[id=1006, title=hhhllll, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1179], 21:26:00.027, Updated [Task] [1006] 
+txn[1180], 21:26:00.027, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1180], 21:26:00.027, Binding Update [task]  set[done=true, ] where[id=1124, title=aaaaa, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1180], 21:26:00.028, Updated [Task] [1124] 
+txn[1181], 21:26:00.029, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1181], 21:26:00.029, Binding Update [task]  set[done=true, ] where[id=1125, title=fewfewfew, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1181], 21:26:00.030, Updated [Task] [1125] 
+txn[1182], 21:26:00.030, update task set done=? where id=? and title=? and done=? and due_date is null and folder=? and project_id=? 
+txn[1182], 21:26:00.030, Binding Update [task]  set[done=true, ] where[id=1126, title=adwadsada, done=false, dueDate=null, folder=Todo, project_id=1, ] 
+txn[1182], 21:26:00.031, Updated [Task] [1126] 

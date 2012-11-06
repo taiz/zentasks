@@ -1,6 +1,7 @@
 package zentasks;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -16,7 +17,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -28,7 +28,7 @@ import zentasks.models.Task;
  *
  * @author miyabetaiji
  */
-public class TaskBoard implements Initializable, AccessibleRootNode {
+public class TaskBoard extends Controller {
 
     private Project project;
 
@@ -41,12 +41,6 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
 
     // Call from Dahsborad
     public void setProject(Project project) { this.project = project; }
-    
-    @FXML
-    private VBox root;
-
-    @Override
-    public VBox getRootNode() { return root; }
 
     @FXML
     private CheckBox doneCheckBox;
@@ -54,8 +48,7 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
     private ChangeListener<Boolean> doneListener = new ChangeListener<Boolean>() {
         @Override
         public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean done) {
-            for (TaskPane taskPane : taskPanes)
-                if (taskPane.isDone() != done) taskPane.setDone(done);
+            for (TaskPane taskPane : collectTaskPanes(!done)) taskPane.setDone(done);
         }
     };
 
@@ -99,7 +92,7 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
                     .onAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
-                            //removeCompletedTasks();
+                            removeTaskPanes(collectTaskPanes(true));
                        }
                     })
                     .build(),
@@ -108,7 +101,7 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
                     .onAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
-                            //removeAllTasks();
+                            removeTaskPanes(taskPanes);
                        }
                     })
                     .build(),
@@ -117,12 +110,31 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
                     .onAction(new EventHandler<ActionEvent>() {
                         @Override
                         public void handle(ActionEvent event) {
-                            //removeFolder();
+                            removeFolder();
                        }
                     })
                     .build()
             )
             .build();
+
+    private void removeTaskPanes(List<TaskPane> panes) {
+        List<TaskPane> dup = new ArrayList<TaskPane>(panes);
+        for (TaskPane taskPane : dup) {
+            taskPane.remove();
+        }
+    }
+
+    private List<TaskPane> collectTaskPanes(boolean done) {
+        List<TaskPane> panes = new ArrayList<TaskPane>();
+        for (TaskPane taskPane : taskPanes)
+            if (taskPane.isDone() == done) panes.add(taskPane);
+        return panes;
+    }
+    
+    private void removeFolder() {
+        Task.deleteInFolder(project.getId(), folderName.get());
+        dashboard.taskBoardRemoved(this);
+    }
 
     @FXML
     private TextField newTaskText;
@@ -156,6 +168,12 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
             Logger.getLogger(TaskBoard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    private Dashboard dashboard;
+    
+    public void setDashboard(Dashboard dashboard) {
+        this.dashboard = dashboard;
+    }
 
     private TaskPane createTaskPane(Task task) throws FXMLLoadException {
         TaskPane pane = (TaskPane)Util.loadFXML(this, "TaskPane.fxml");
@@ -166,7 +184,7 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
     private void addTaskPane(TaskPane taskPane) {
         taskPanes.add(taskPane);
         taskPane.setTaskBoard(this);
-        taskItemsPane.getChildren().add(taskPane.getRootNode());
+        taskItemsPane.getChildren().add(taskPane.getRoot());
     }
 
     public void taskChanged(TaskPane taskPane) {
@@ -175,7 +193,7 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
 
     public void taskRemoved(TaskPane taskPane) {
         taskPanes.remove(taskPane);
-        taskItemsPane.getChildren().remove(taskPane.getRootNode());
+        taskItemsPane.getChildren().remove(taskPane.getRoot());
         updateRemainLabel();
     }
 
@@ -183,13 +201,13 @@ public class TaskBoard implements Initializable, AccessibleRootNode {
     private StackPane folderPane;
 
     public void acceptEdit() {
-       final TextField input = TextFieldBuilder.create().build();
+        final TextField input = TextFieldBuilder.create().build();
         input.textProperty().bindBidirectional(folderName);
         input.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent t) {
                 folderPane.getChildren().remove(input);
-                input.clear();
+                input.textProperty().unbindBidirectional(folderName);
             }
         });
         folderPane.getChildren().add(input);

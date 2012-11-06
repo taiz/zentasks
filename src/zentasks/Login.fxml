@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="root" prefHeight="700.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.Login">
+  <center>
+    <StackPane prefHeight="150.0" prefWidth="200.0">
+      <children>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="-1.0" prefWidth="350.0" StackPane.alignment="CENTER">
+          <children>
+            <VBox alignment="CENTER" prefHeight="-1.0" prefWidth="100.0">
+              <children>
+                <Label alignment="CENTER" text="Sign In">
+                  <font>
+                    <Font name="System Bold" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                    <Insets bottom="5.0" top="20.0" />
+                  </VBox.margin>
+                </Label>
+                <StackPane fx:id="messagePane" prefHeight="-1.0" prefWidth="-1.0">
+                  <VBox.margin>
+                    <Insets fx:id="x2" />
+                  </VBox.margin>
+                </StackPane>
+                <GridPane>
+                  <children>
+                    <TextField id="emailText" fx:id="email" prefWidth="200.0" promptText="Email" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                      <GridPane.margin>
+                        <Insets left="20.0" right="20.0" fx:id="x3" />
+                      </GridPane.margin>
+                    </TextField>
+                    <Button fx:id="loginBtn" defaultButton="true" mnemonicParsing="false" onAction="#doLogin" prefWidth="330.0" text="Login" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.margin="$x3" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                    <PasswordField id="pass" fx:id="password" prefWidth="200.0" promptText="Password" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <GridPane.margin>
+                        <Insets left="20.0" right="20.0" fx:id="x3" />
+                      </GridPane.margin>
+                    </PasswordField>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <VBox.margin>
+                    <Insets bottom="20.0" />
+                  </VBox.margin>
+                </GridPane>
+              </children>
+            </VBox>
+            <VBox prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0">
+                  <children>
+                    <Label text="Try " />
+                    <Label text="guillaume@sample.com" />
+                    <Label text=" with " />
+                    <Label text="scret" />
+                    <Label text=" as" />
+                  </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0">
+                  <children>
+                    <Label text="password." />
+                  </children>
+                </HBox>
+              </children>
+              <VBox.margin>
+                <Insets top="20.0" />
+              </VBox.margin>
+            </VBox>
+          </children>
+        </VBox>
+      </children>
+      <padding>
+        <Insets fx:id="x2" />
+      </padding>
+      <BorderPane.margin>
+        <Insets bottom="200.0" />
+      </BorderPane.margin>
+    </StackPane>
+  </center>
+  <top>
+    <GridPane BorderPane.margin="$x2">
+      <children>
+        <HBox id="title" fx:id="pageTitle" alignment="CENTER" onMouseClicked="#reload" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-zen" text="ZEN">
+              <font>
+                <Font name="Candara Bold" size="20.0" fx:id="x1" />
+              </font>
+            </Text>
+            <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-tasks" text="TASKS" />
+          </children>
+          <padding>
+            <Insets fx:id="x2" />
+          </padding>
+          <GridPane.margin>
+            <Insets left="15.0" />
+          </GridPane.margin>
+        </HBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" maxWidth="784.0" minWidth="10.0" prefWidth="712.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="511.0" minWidth="10.0" prefWidth="312.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </top>
+</BorderPane>

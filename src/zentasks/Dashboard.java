@@ -1,7 +1,5 @@
 package zentasks;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,26 +14,61 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import zentasks.models.Project;
 import zentasks.models.Task;
+import zentasks.models.User;
 
 /**
  *
  * @author miyabetaiji
  */
-public class Dashboard implements Initializable {
+public class Dashboard extends ParentController {
+
+    @FXML
+    private Label userNameLabel;
+
+    @FXML
+    private Label emailLabel;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        showUser();
         buildBoard();
+        VBox vbox = (VBox)projectsTree.getParent();
+        vbox.prefHeightProperty().bind(projectsTree.heightProperty());
+        //projectsTree.prefHeightProperty().bind(vbox.heightProperty());
     }    
 
+    private void showUser() {
+        String email = (String)context.data().get("email");
+        String name = User.find(email).getName();
+        userNameLabel.setText(email);
+        emailLabel.setText("(" + name + ")");
+    }
+
+    @FXML
+    private Button logout;
+    
+    @FXML
+    private void doLogout(ActionEvent envet) {
+        context.data().clear();
+        moveToLogin();
+    }
+    
+    private void moveToLogin() {
+        try {
+            Login login = (Login)Util.loadFXML(this, "Login.fxml");
+            login.showInfoMessage("You've been logged out");
+            moveTo(login);
+        } catch (FXMLLoadException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     // Call from pageTitle (On Mouse Cliceked)
     @FXML
     private void reloadAll(MouseEvent event) { buildBoard(); }
@@ -64,22 +97,23 @@ public class Dashboard implements Initializable {
     @FXML
     private VBox taskBoradsPane;
 
-    @FXML
-    private Button newFolderBtn;
-
     private void buildTaskBoard() {
         taskBoradsPane.getChildren().clear();
         try {
             for(Entry<Project,List<Task>> entry : Task.findAllGroupByProject().entrySet()) {
-                ProjectBoard borad = createProjectBorad(entry.getKey().getName());
-                taskBoradsPane.getChildren().add(borad.getRootNode());
+                ProjectBoard borad = createProjectBorad(entry.getKey(), entry.getValue());
+                taskBoradsPane.getChildren().add(borad.getRoot());
             }
         } catch (FXMLLoadException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
+        newFolderBtn.setVisible(false);
     }
     
-    public void buildTaskBoard(Project project) {
+    private Project currentProject;
+    
+    void buildTaskBoard(Project project) {
+        currentProject = project;
         taskBoradsPane.getChildren().clear();
 
         Map<String,List<Task>> tasks = Task.findByProject(project);
@@ -88,24 +122,33 @@ public class Dashboard implements Initializable {
         try {
             for (String folder : folders) {
                 TaskBoard board = createTaskBoard(project, folder, tasks.get(folder));
-                taskBoradsPane.getChildren().add(board.getRootNode());
+                taskBoradsPane.getChildren().add(board.getRoot());
             }
         } catch (FXMLLoadException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
+        newFolderBtn.setVisible(true);
     }
 
-    private ProjectBoard createProjectBorad(String projectName) throws FXMLLoadException {
+    private ProjectBoard createProjectBorad(Project project, List<Task> tasks) throws FXMLLoadException {
         ProjectBoard board = (ProjectBoard)Util.loadFXML(this, "ProjectBoard.fxml");
-        board.setProjectName(projectName);
+        board.setDashboard(this);
+        board.setProject(project);
+        board.setTasks(tasks);
         return board;
     }
 
-    private TaskBoard createTaskBoard(Project project, String folderName, List<Task> tasks)
-            throws FXMLLoadException {
+    private TaskBoard createTaskBoard(Project project, String folderName) throws FXMLLoadException {
         TaskBoard board = (TaskBoard)Util.loadFXML(this, "TaskBoard.fxml");
+        board.setDashboard(this);
         board.setProject(project);
         board.setFolderName(folderName);
+        return board;
+    }
+    
+    private TaskBoard createTaskBoard(Project project, String folderName, List<Task> tasks)
+            throws FXMLLoadException {
+        TaskBoard board = createTaskBoard(project, folderName);
         board.setTasks(tasks);
         return board;
     }
@@ -116,6 +159,20 @@ public class Dashboard implements Initializable {
         return pane;
     }
 
+    @FXML
+    private Button newFolderBtn;
+    
+    @FXML
+    private void addNewFolder(ActionEvent event) throws FXMLLoadException {
+        TaskBoard board = createTaskBoard(currentProject, "New Folder");
+        board.acceptEdit();
+        taskBoradsPane.getChildren().add(board.getRoot());
+    }
+
+    public void taskBoardRemoved(TaskBoard board) {
+        taskBoradsPane.getChildren().remove(board.getRoot());
+    }
+    
     @FXML
     private Label breadcrumbFirst;
     
@@ -141,7 +198,7 @@ public class Dashboard implements Initializable {
         groupItem.acceptEdit();
         addProjectGroup(groupItem);
     }
-
+    
     private void buildProjectTree() {
         TreeItem rootNode = new TreeItem();
         List<Project> projects = Project.findAll();

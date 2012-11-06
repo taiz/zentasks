@@ -12,14 +12,19 @@ public class Util {
     
     public static Object loadFXML(Object o, String path) throws FXMLLoadException {
         try {
-            //ClassLoader cloader = Thread.currentThread().getContextClassLoader();
-            //InputStream fxmlStream = new FileInputStream(rootPath + path);
-            //InputStream fxmlStream = cloader.getResourceAsStream(path);
+            return loadFXML(o.getClass().getResourceAsStream(path));
+        } catch (FXMLLoadException ex) {
+            throw new FXMLLoadException("Failed to load" + path, ex);
+        }
+    }
+    
+    public static Object loadFXML(InputStream is) throws FXMLLoadException {
+        try {
             FXMLLoader loader = new FXMLLoader();
-            loader.load(o.getClass().getResourceAsStream(path));
+            loader.load(is);
             return loader.getController();
         } catch (IOException ex) {
-            throw new FXMLLoadException("Failed to load " + path, ex);
+            throw new FXMLLoadException("Failed to load", ex);
         }
-    }    
+    }
 }

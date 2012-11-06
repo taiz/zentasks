@@ -1,0 +1,18 @@
+txn[1001], 19:47:38.440, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 
+txn[1001], 19:47:38.474, FindMany type[Project] origin[GZ9o4.BWY1YJ.Cf6J2k] exeMicros[34014] rows[9] name[] predicates[] bind[] 
+txn[1002], 19:47:38.512, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0 
+txn[1002], 19:47:38.519, FindMany type[Task] origin[B0B5of.BGCeS7.BNRLld] exeMicros[7260] rows[13] name[] predicates[] bind[] 
+txn[1003], 19:47:38.553, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1003], 19:47:38.559, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[6386] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1004], 19:47:38.703, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1004], 19:47:38.706, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2172] rows[1] name[] predicates[t0.id = ?  ] bind[1000] 
+txn[1005], 19:47:38.747, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 19:47:38.748, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1274] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1006], 19:47:38.775, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 19:47:38.777, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2195] rows[1] name[] predicates[t0.id = ?  ] bind[5] 
+txn[1007], 19:47:38.826, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 19:47:38.830, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[4198] rows[1] name[] predicates[t0.id = ?  ] bind[7] 
+txn[1008], 19:47:38.862, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1008], 19:47:38.863, FindMany mode[+lazy] type[Project] origin[B0B5of.BGCeS7.BNRLld] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1575] rows[1] name[] predicates[t0.id = ?  ] bind[9] 
+txn[1009], 19:47:43.258, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.project_id as c5  from task t0  where t0.project_id = ?  
+txn[1009], 19:47:43.259, FindMany type[Task] origin[Bm7UHS.BGCeS7.B7JQ_6] exeMicros[1604] rows[2] name[] predicates[t0.project_id = ? ] bind[5] 

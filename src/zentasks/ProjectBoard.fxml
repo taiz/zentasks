@@ -14,7 +14,7 @@
   <children>
     <HBox alignment="CENTER_LEFT" minWidth="-1.0" prefHeight="30.0" prefWidth="-1.0" spacing="10.0">
       <children>
-        <Hyperlink fx:id="projectLink" text="Project Name" />
+        <Hyperlink fx:id="projectLink" onAction="#showTasks" text="Project Name" />
       </children>
       <padding>
         <Insets left="10.0" fx:id="x1" />

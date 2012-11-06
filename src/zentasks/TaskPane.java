@@ -20,7 +20,7 @@ import zentasks.models.Task;
  *
  * @author miyabetaiji
  */
-public class TaskPane implements Initializable, AccessibleRootNode {
+public class TaskPane extends Controller {
     private Task task;
     private TaskBoard taskBoard;
     private TaskItem taskItem;
@@ -29,8 +29,8 @@ public class TaskPane implements Initializable, AccessibleRootNode {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             taskItem = (TaskItem)Util.loadFXML(this, "TaskItem.fxml");
-            root.setCenter(taskItem.getRootNode());
-            BorderPane.setAlignment(taskItem.getRootNode(), Pos.CENTER_LEFT);
+            ((BorderPane)root).setCenter(taskItem.getRoot());
+            BorderPane.setAlignment(taskItem.getRoot(), Pos.CENTER_LEFT);
             doneProperty = doneCheckBox.selectedProperty();
             //doneProperty.addListener(doneListener);
         } catch (FXMLLoadException ex) {
@@ -38,12 +38,6 @@ public class TaskPane implements Initializable, AccessibleRootNode {
         }
     }
     
-    @FXML
-    private BorderPane root;
-
-    @Override
-    public BorderPane getRootNode() { return root; }
-
     @FXML
     private CheckBox doneCheckBox;
     
@@ -64,6 +58,10 @@ public class TaskPane implements Initializable, AccessibleRootNode {
     // Call from removeBtn (On Action)
     @FXML
     private void removeTask(ActionEvent event) {
+        remove();
+    }
+    
+    public void remove() {
         task.delete();
         taskBoard.taskRemoved(this);
     }

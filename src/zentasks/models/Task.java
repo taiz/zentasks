@@ -70,6 +70,14 @@ public class Task {
         return map;
     }
 
+    public static void deleteInFolder(Long projectId, String folder) {
+        Ebean.createSqlUpdate(
+            "delete from task where folder = :folder and project_id = :project"
+        ).setParameter("folder", folder)
+         .setParameter("project", projectId)
+         .execute();
+    }
+    
     public void save() { Ebean.save(this); }
 
     public void update() { Ebean.update(this); }

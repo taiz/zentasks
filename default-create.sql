@@ -15,9 +15,18 @@ create table task (
   constraint pk_task primary key (id))
 ;
 
+create table account (
+  email                     varchar(255) not null,
+  name                      varchar(255),
+  password                  varchar(255),
+  constraint pk_account primary key (email))
+;
+
 create sequence project_seq;
 
 create sequence task_seq;
+
+create sequence account_seq;
 
 alter table task add constraint fk_task_project_1 foreign key (project_id) references project (id);
 create index ix_task_project_1 on task (project_id);

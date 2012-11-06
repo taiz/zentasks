@@ -5,8 +5,6 @@
 package zentasks;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -22,9 +20,9 @@ public class Zentasks extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-        
-        stage.setScene(new Scene(root));
+        Login login = (Login)Util.loadFXML(getClass().getResourceAsStream("Login.fxml"));
+        login.setStage(stage);
+        stage.setScene(new Scene(login.getRoot()));
         stage.show();
     }
 }
