@@ -20,9 +20,9 @@ public class Task {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dueDate;
 
-    //@ManyToOne
-    //private User assignedTo;
-    
+    @ManyToOne
+    private User assignedTo;
+
     private String folder;
     
     @ManyToOne
@@ -40,9 +40,20 @@ public class Task {
         return Ebean.find(Task.class).findList();
     }
 
-    public static Map<Project,List<Task>> findAllGroupByProject() {
+    /**
+     * Retrieve todo tasks for the user.
+     */
+    public static List<Task> findTodoInvolving(String user) {
+       return Ebean.find(Task.class)
+           .where()
+                .eq("done", false)
+                .eq("project.members.email", user)
+           .findList();
+    }
+
+    public static Map<Project,List<Task>> findGroupByProject(String user) {
         Map<Project,List<Task>> map = new HashMap<Project,List<Task>>();
-        for (Task task : findAll()) {
+        for (Task task : findTodoInvolving(user)) {
             if (map.containsKey(task.getProject())) {
                 map.get(task.getProject()).add(task);
             } else {
@@ -100,6 +111,10 @@ public class Task {
 
     public void setDueDate(Date dueDate) { this.dueDate = dueDate; }
 
+    public User getAssignedTo() { return assignedTo; }
+
+    public void setAssignedTo(User assignedTo) { this.assignedTo = assignedTo; }
+    
     public String getFolder() { return folder; }
 
     public void setFolder(String folder) { this.folder = folder; }

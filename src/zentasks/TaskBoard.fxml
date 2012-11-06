@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="663.0" style="-fx-background-radius: 3;&#10;-fx-background-color: aliceblue;" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskBoard">
+<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="750.0" style="-fx-background-radius: 3;&#10;-fx-background-color: aliceblue;" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskBoard">
   <children>
     <BorderPane prefHeight="30.0" prefWidth="200.0">
       <center>

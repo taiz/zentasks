@@ -20,18 +20,30 @@ public class Project {
     @OneToMany
     private List<Task> tasks;
 
+    @ManyToMany
+    public List<User> members = new ArrayList<User>();
+
     public Project() {}
 
-    public Project(String name, String folder) {
+    public Project(String name, String folder, User owner) {
         this.name = name;
         this.folder = folder;
+        this.members.add(owner);
     }
     
-   public static List<Project> findAll() {
-        return Ebean.find(Project.class).findList();
+    /**
+     * Retrieve project for user
+     */
+    public static List<Project> findInvolving(String user) {
+        return Ebean.find(Project.class).where()
+            .eq("members.email", user)
+            .findList();
     }
-        
-    public void save() { Ebean.save(this); }
+
+    public void save() {
+        Ebean.save(this);
+        Ebean.saveManyToManyAssociations(this, "members");
+    }
 
     public void delete() { Ebean.delete(this); }
 
@@ -50,4 +62,9 @@ public class Project {
     public List<Task> getTasks() { return tasks; }
 
     public void setTasks(List<Task> tasks) { this.tasks = tasks; }
+
+    public List<User> getMembers() { return members; }
+
+    public void setMembers(List<User> members) { this.members = members; }
+    
 }

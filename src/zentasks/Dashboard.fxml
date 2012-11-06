@@ -49,21 +49,21 @@
                   </Polygon>
                 </children>
               </HBox>
-              <VBox id="tasksPane" fx:id="taskBoradsPane" fillWidth="true" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="20.0">
+              <VBox id="tasksPane" fx:id="taskBoradsPane" fillWidth="true" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="15.0">
                 <VBox.margin>
-                  <Insets left="20.0" top="20.0" />
+                  <Insets left="15.0" right="15.0" top="15.0" />
                 </VBox.margin>
               </VBox>
-              <Button id="new" fx:id="newFolderBtn" mnemonicParsing="false" text="New Folder">
+              <Button id="new" fx:id="newFolderBtn" mnemonicParsing="false" onAction="#addNewFolder" text="New Folder">
                 <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" top="20.0" />
+                  <Insets bottom="20.0" left="15.0" top="20.0" />
                 </VBox.margin>
               </Button>
             </children>
           </VBox>
         </center>
         <left>
-          <VBox prefHeight="200.0" prefWidth="250.0" spacing="10.0">
+          <VBox prefHeight="200.0" prefWidth="235.0" spacing="10.0">
             <children>
               <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="3.0">
                 <children>
@@ -74,7 +74,7 @@
                   <Insets left="5.0" right="5.0" top="10.0" />
                 </VBox.margin>
               </HBox>
-              <TreeView id="projectTree" fx:id="projectsTree" prefHeight="-1.0" prefWidth="240.0" showRoot="false" VBox.vgrow="ALWAYS">
+              <TreeView id="projectTree" fx:id="projectsTree" prefHeight="428.0" prefWidth="240.00009999999747" showRoot="false" VBox.vgrow="ALWAYS">
                 <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                 </VBox.margin>

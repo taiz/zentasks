@@ -32,13 +32,13 @@
                 </StackPane>
                 <GridPane>
                   <children>
-                    <TextField id="emailText" fx:id="email" prefWidth="200.0" promptText="Email" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <TextField id="emailText" fx:id="email" prefWidth="200.0" promptText="Email" text="guillaume@sample.com" GridPane.columnIndex="0" GridPane.rowIndex="0">
                       <GridPane.margin>
                         <Insets left="20.0" right="20.0" fx:id="x3" />
                       </GridPane.margin>
                     </TextField>
                     <Button fx:id="loginBtn" defaultButton="true" mnemonicParsing="false" onAction="#doLogin" prefWidth="330.0" text="Login" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.margin="$x3" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                    <PasswordField id="pass" fx:id="password" prefWidth="200.0" promptText="Password" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <PasswordField id="pass" fx:id="password" prefWidth="200.0" promptText="Password" text="secret" GridPane.columnIndex="0" GridPane.rowIndex="1">
                       <GridPane.margin>
                         <Insets left="20.0" right="20.0" fx:id="x3" />
                       </GridPane.margin>

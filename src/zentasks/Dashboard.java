@@ -99,8 +99,10 @@ public class Dashboard extends ParentController {
 
     private void buildTaskBoard() {
         taskBoradsPane.getChildren().clear();
+        String user = (String)context.data().get("email");
+        Map<Project,List<Task>> tasks = Task.findGroupByProject(user);
         try {
-            for(Entry<Project,List<Task>> entry : Task.findAllGroupByProject().entrySet()) {
+            for(Entry<Project,List<Task>> entry : tasks.entrySet()) {
                 ProjectBoard borad = createProjectBorad(entry.getKey(), entry.getValue());
                 taskBoradsPane.getChildren().add(borad.getRoot());
             }
@@ -201,7 +203,7 @@ public class Dashboard extends ParentController {
     
     private void buildProjectTree() {
         TreeItem rootNode = new TreeItem();
-        List<Project> projects = Project.findAll();
+        List<Project> projects = Project.findInvolving((String)context.data().get("email"));
         for (Project project : projects) {
             boolean found = false;
             for (Object treeItem : rootNode.getChildren()) {
@@ -323,7 +325,9 @@ public class Dashboard extends ParentController {
         }
 
         private void addNewProjectItem() {
-            ProjectItem projectItem = new ProjectItem(this);
+            User user = User.find((String)context.data().get("email"));
+            Project project = new Project("New Project", groupName.get(), user);
+            ProjectItem projectItem = new ProjectItem(this, project);
             projectItem.acceptEdit();
             this.getChildren().add(projectItem);
         }
@@ -345,10 +349,6 @@ public class Dashboard extends ParentController {
     private class ProjectItem extends TreeItem<BorderPane> {
         private ProjectGroupItem groupItem;
         private Project project;
-
-        public ProjectItem(ProjectGroupItem groupItem) {
-            this(groupItem, new Project("New Project", groupItem.getGroupName()));
-        }
 
         public ProjectItem(ProjectGroupItem groupItem, Project project) {
             this.groupItem = groupItem;

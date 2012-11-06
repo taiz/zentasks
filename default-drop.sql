@@ -1,5 +1,7 @@
 drop table if exists project cascade;
 
+drop table if exists project_account cascade;
+
 drop table if exists task cascade;
 
 drop table if exists account cascade;
