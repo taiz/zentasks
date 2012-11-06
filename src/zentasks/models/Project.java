@@ -45,6 +45,15 @@ public class Project {
         Ebean.saveManyToManyAssociations(this, "members");
     }
 
+    /**
+     * Delete all project in a folder
+     */
+    public static void deleteInFolder(String folder) {
+        Ebean.createSqlUpdate(
+            "delete from project where folder = :folder"
+        ).setParameter("folder", folder).execute();
+    }
+    
     public void delete() { Ebean.delete(this); }
 
     public Long getId() { return id; }

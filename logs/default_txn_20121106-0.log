@@ -1017,3 +1017,233 @@ txn[1038], 22:44:41.272, select t0.id as c0, t0.title as c1, t0.done as c2, t0.d
 txn[1038], 22:44:41.273, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[847] rows[1] name[] predicates[t0.project_id = ? ] bind[1020] 
 txn[1039], 22:44:42.523, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
 txn[1039], 22:44:42.524, FindMany type[Task] origin[CPibuZ.BGCeS7.CJebgr] exeMicros[870] rows[0] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, pengimu@dudada.com] 
+txn[1001], 22:47:36.049, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1001], 22:47:36.080, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[30768] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[pengimu@dudada.com, secret] 
+txn[1002], 22:47:36.228, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1002], 22:47:36.232, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[4236] rows[1] bind[pengimu@dudada.com] 
+txn[1003], 22:47:36.242, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1003], 22:47:36.249, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[7477] rows[1] name[] predicates[u1.email = ? ] bind[pengimu@dudada.com] 
+txn[1004], 22:47:36.261, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1004], 22:47:36.267, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[5838] rows[0] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, pengimu@dudada.com] 
+txn[1005], 22:47:39.918, delete from project where id=? and name=? and folder=? 
+txn[1005], 22:47:39.918, Binding Delete [project] where[id=1020, name=Test Project, folder=Test Group, ] 
+txn[1005], 22:47:39.923, Deleted [Project] [1020] 
+txn[1006], 22:47:50.944, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1006], 22:47:50.946, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[1453] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[guillaume@sample.com, secret] 
+txn[1007], 22:47:51.034, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1007], 22:47:51.035, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[1238] rows[1] bind[guillaume@sample.com] 
+txn[1008], 22:47:51.036, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1008], 22:47:51.039, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[2565] rows[7] name[] predicates[u1.email = ? ] bind[guillaume@sample.com] 
+txn[1009], 22:47:51.046, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1009], 22:47:51.052, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[5941] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1010], 22:47:51.066, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1010], 22:47:51.068, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1401] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1011], 22:47:51.101, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1011], 22:47:51.102, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1160] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1012], 22:47:51.127, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1012], 22:47:51.128, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1005] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1013], 22:47:56.168, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1013], 22:47:56.169, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[1557] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[pengimu@dudada.com, secret] 
+txn[1014], 22:47:56.219, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1014], 22:47:56.220, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[1004] rows[1] bind[pengimu@dudada.com] 
+txn[1015], 22:47:56.221, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1015], 22:47:56.223, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[1857] rows[0] name[] predicates[u1.email = ? ] bind[pengimu@dudada.com] 
+txn[1016], 22:47:56.224, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1016], 22:47:56.227, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[2984] rows[0] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, pengimu@dudada.com] 
+txn[1017], 22:48:03.276, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1017], 22:48:03.280, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[3472] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[guillaume@sample.com, secret] 
+txn[1018], 22:48:03.349, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1018], 22:48:03.351, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[1427] rows[1] bind[guillaume@sample.com] 
+txn[1019], 22:48:03.352, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1019], 22:48:03.355, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[2946] rows[7] name[] predicates[u1.email = ? ] bind[guillaume@sample.com] 
+txn[1020], 22:48:03.363, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1020], 22:48:03.369, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[5919] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1021], 22:48:03.386, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1021], 22:48:03.387, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1107] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1022], 22:48:03.416, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1022], 22:48:03.418, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1229] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1023], 22:48:03.450, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1023], 22:48:03.451, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[741] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1024], 22:50:35.085, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1024], 22:50:35.086, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[1450] rows[0] name[] predicates[t0.project_id = ? ] bind[6] 
+txn[1025], 22:50:35.967, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1025], 22:50:35.968, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[1212] rows[0] name[] predicates[t0.project_id = ? ] bind[8] 
+txn[1026], 22:50:36.718, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1026], 22:50:36.719, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[1033] rows[0] name[] predicates[t0.project_id = ? ] bind[8] 
+txn[1027], 22:50:42.035, insert into task (id, title, done, due_date, folder, assigned_to_email, project_id) values (?,?,?,?,?,?,?) 
+txn[1027], 22:50:42.035, Binding Insert [task]  set[id=1080, title=aaa, done=false, dueDate=null, folder=New Folder, assigned_to_email=null, project_id=8, ] 
+txn[1027], 22:50:42.037, Inserted [Task] [1080] 
+txn[1028], 22:50:59.777, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1028], 22:50:59.778, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[1094] rows[0] name[] predicates[t0.project_id = ? ] bind[6] 
+txn[1029], 22:51:04.090, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1029], 22:51:04.091, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[1173] rows[0] name[] predicates[t0.project_id = ? ] bind[6] 
+txn[1030], 22:51:05.036, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1030], 22:51:05.036, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[791] rows[1] name[] predicates[t0.project_id = ? ] bind[8] 
+txn[1031], 22:51:06.561, delete from project where id=? and name=? and folder=? 
+txn[1031], 22:51:06.561, Binding Delete [project] where[id=8, name=Private, folder=Personal, ] 
+txn[1031], 22:51:06.562, Deleted [Project] [8] 
+txn[1032], 22:52:47.620, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1032], 22:52:47.621, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT5] exeMicros[1228] rows[3] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1033], 22:54:45.177, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1033], 22:54:45.178, FindBean type[User] origin[CICHAw.BGH_c0.BsCdWj] exeMicros[1060] rows[1] bind[guillaume@sample.com] 
+txn[1034], 22:54:48.142, insert into project (id, name, folder) values (?,?,?) 
+txn[1034], 22:54:48.143, Binding Insert [project]  set[id=1040, name=New Project2, folder=NEW GROUP, ] 
+txn[1034], 22:54:48.143, Inserted [Project] [1040] 
+txn[1035], 22:54:48.155, insert into project_account (project_id, account_email) values (?, ?) 
+txn[1035], 22:54:48.158, InsertSql table[project_account] rows[1] bind[1040, guillaume@sample.com, ] 
+txn[1036], 22:54:59.173, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1036], 22:54:59.173, FindBean type[User] origin[CICHAw.BGH_c0.BsCdWj] exeMicros[628] rows[1] bind[guillaume@sample.com] 
+txn[1037], 22:55:00.954, insert into project (id, name, folder) values (?,?,?) 
+txn[1037], 22:55:00.954, Binding Insert [project]  set[id=1041, name=New Project3, folder=NEW GROUP, ] 
+txn[1037], 22:55:00.955, Inserted [Project] [1041] 
+txn[1038], 22:55:00.957, insert into project_account (project_id, account_email) values (?, ?) 
+txn[1038], 22:55:00.958, InsertSql table[project_account] rows[1] bind[1041, guillaume@sample.com, ] 
+txn[1001], 22:58:44.317, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1001], 22:58:44.370, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[53527] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[guillaume@sample.com, secret] 
+txn[1002], 22:58:44.512, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1002], 22:58:44.515, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[3420] rows[1] bind[guillaume@sample.com] 
+txn[1003], 22:58:44.524, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1003], 22:58:44.531, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[6898] rows[8] name[] predicates[u1.email = ? ] bind[guillaume@sample.com] 
+txn[1004], 22:58:44.548, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1004], 22:58:44.556, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[8331] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1005], 22:58:44.575, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 22:58:44.577, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1829] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1006], 22:58:44.627, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 22:58:44.628, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1563] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1007], 22:58:44.676, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 22:58:44.679, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2498] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1008], 22:58:55.360, delete from project where folder = ? 
+txn[1008], 22:58:55.362, DeleteSql table[project] rows[3] bind[NEW GROUP, ] 
+txn[1009], 22:59:37.231, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1009], 22:59:37.232, FindBean type[User] origin[CICHAw.BGH_c0.BsCdWj] exeMicros[1147] rows[1] bind[guillaume@sample.com] 
+txn[1010], 22:59:40.295, insert into project (id, name, folder) values (?,?,?) 
+txn[1010], 22:59:40.295, Binding Insert [project]  set[id=1060, name=New Project, folder=NEW GROUP, ] 
+txn[1010], 22:59:40.296, Inserted [Project] [1060] 
+txn[1011], 22:59:40.301, insert into project_account (project_id, account_email) values (?, ?) 
+txn[1011], 22:59:40.303, InsertSql table[project_account] rows[1] bind[1060, guillaume@sample.com, ] 
+txn[1012], 22:59:45.261, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1012], 22:59:45.262, FindBean type[User] origin[CICHAw.BGH_c0.BsCdWj] exeMicros[949] rows[1] bind[guillaume@sample.com] 
+txn[1013], 22:59:46.854, insert into project (id, name, folder) values (?,?,?) 
+txn[1013], 22:59:46.854, Binding Insert [project]  set[id=1061, name=New Project2, folder=NEW GROUP, ] 
+txn[1013], 22:59:46.855, Inserted [Project] [1061] 
+txn[1014], 22:59:46.857, insert into project_account (project_id, account_email) values (?, ?) 
+txn[1014], 22:59:46.858, InsertSql table[project_account] rows[1] bind[1061, guillaume@sample.com, ] 
+txn[1015], 22:59:47.882, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1015], 22:59:47.884, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1474] rows[0] name[] predicates[t0.project_id = ? ] bind[1060] 
+txn[1016], 22:59:57.640, insert into task (id, title, done, due_date, folder, assigned_to_email, project_id) values (?,?,?,?,?,?,?) 
+txn[1016], 22:59:57.640, Binding Insert [task]  set[id=1100, title=New Task, done=false, dueDate=null, folder=New Folder, assigned_to_email=null, project_id=1060, ] 
+txn[1016], 22:59:57.641, Inserted [Task] [1100] 
+txn[1017], 22:59:59.379, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1017], 22:59:59.380, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1153] rows[0] name[] predicates[t0.project_id = ? ] bind[1061] 
+txn[1018], 23:00:09.726, insert into task (id, title, done, due_date, folder, assigned_to_email, project_id) values (?,?,?,?,?,?,?) 
+txn[1018], 23:00:09.726, Binding Insert [task]  set[id=1101, title=New Task2, done=false, dueDate=null, folder=New Folder3, assigned_to_email=null, project_id=1061, ] 
+txn[1018], 23:00:09.727, Inserted [Task] [1101] 
+txn[1019], 23:00:12.307, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1019], 23:00:12.308, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1396] rows[1] name[] predicates[t0.project_id = ? ] bind[1060] 
+txn[1020], 23:00:13.455, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1020], 23:00:13.456, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1578] rows[1] name[] predicates[t0.project_id = ? ] bind[1061] 
+txn[1021], 23:00:27.014, insert into task (id, title, done, due_date, folder, assigned_to_email, project_id) values (?,?,?,?,?,?,?) 
+txn[1021], 23:00:27.014, Binding Insert [task]  set[id=1102, title=New Task3, done=false, dueDate=null, folder=New Folder3, assigned_to_email=null, project_id=1061, ] 
+txn[1021], 23:00:27.015, Inserted [Task] [1102] 
+txn[1022], 23:01:35.482, delete from project where folder = ? 
+txn[1022], 23:01:35.483, DeleteSql table[project] rows[2] bind[NEW GROUP, ] 
+txn[1023], 23:01:41.153, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1023], 23:01:41.154, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1139] rows[0] name[] predicates[t0.project_id = ? ] bind[6] 
+txn[1024], 23:01:44.162, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1024], 23:01:44.163, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[895] rows[1] name[] predicates[t0.project_id = ? ] bind[4] 
+txn[1025], 23:03:28.966, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1025], 23:03:28.968, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1455] rows[1] name[] predicates[t0.project_id = ? ] bind[7] 
+txn[1026], 23:03:30.107, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1026], 23:03:30.108, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[889] rows[1] name[] predicates[t0.project_id = ? ] bind[4] 
+txn[1027], 23:03:31.516, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1027], 23:03:31.517, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[487] rows[0] name[] predicates[t0.project_id = ? ] bind[6] 
+txn[1028], 23:03:41.093, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1028], 23:03:41.094, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[839] rows[1] name[] predicates[t0.project_id = ? ] bind[7] 
+txn[1029], 23:06:27.462, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1029], 23:06:27.464, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[2149] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[guillaume@sample.com, secret] 
+txn[1030], 23:06:27.547, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1030], 23:06:27.548, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[1174] rows[1] bind[guillaume@sample.com] 
+txn[1031], 23:06:27.549, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1031], 23:06:27.552, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[2840] rows[6] name[] predicates[u1.email = ? ] bind[guillaume@sample.com] 
+txn[1032], 23:06:27.556, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1032], 23:06:27.561, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[4851] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1033], 23:06:27.572, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1033], 23:06:27.573, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1084] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1034], 23:06:27.601, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1034], 23:06:27.602, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1239] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1035], 23:06:27.634, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1035], 23:06:27.635, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1166] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1036], 23:06:30.869, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1036], 23:06:30.869, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[611] rows[0] name[] predicates[t0.project_id = ? ] bind[6] 
+txn[1037], 23:06:32.860, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1037], 23:06:32.861, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1260] rows[3] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1038], 23:06:34.103, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1038], 23:06:34.103, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[530] rows[0] name[] predicates[t0.project_id = ? ] bind[3] 
+txn[1039], 23:06:35.024, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1039], 23:06:35.025, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1094] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1040], 23:06:39.276, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1040], 23:06:39.278, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1156] rows[1] name[] predicates[t0.project_id = ? ] bind[4] 
+txn[1041], 23:06:43.534, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1041], 23:06:43.535, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[1427] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[guillaume@sample.com, secret] 
+txn[1042], 23:06:43.579, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1042], 23:06:43.581, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[1270] rows[1] bind[guillaume@sample.com] 
+txn[1043], 23:06:43.582, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1043], 23:06:43.584, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[2529] rows[6] name[] predicates[u1.email = ? ] bind[guillaume@sample.com] 
+txn[1044], 23:06:43.588, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1044], 23:06:43.592, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[3883] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1045], 23:06:43.602, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1045], 23:06:43.602, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[618] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1046], 23:06:43.634, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1046], 23:06:43.635, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[647] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1047], 23:06:43.657, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1047], 23:06:43.658, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[620] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1001], 23:07:08.814, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0  where t0.email = ?  and t0.password = ?  
+txn[1001], 23:07:08.863, FindMany type[User] origin[DtpspF.BGH_c1.DBqyz-] exeMicros[48675] rows[1] name[] predicates[t0.email = ?  and t0.password = ? ] bind[guillaume@sample.com, secret] 
+txn[1002], 23:07:09.014, select t0.email as c0, t0.name as c1, t0.password as c2  from account t0 where t0.email = ?   
+txn[1002], 23:07:09.018, FindBean type[User] origin[CICHAw.BGH_c0.4iAPp] exeMicros[3779] rows[1] bind[guillaume@sample.com] 
+txn[1003], 23:07:09.027, select distinct t0.id as c0, t0.name as c1, t0.folder as c2  from project t0 join project_account u1z_ on u1z_.project_id = t0.id  join account u1 on u1.email = u1z_.account_email   where u1.email = ?  
+txn[1003], 23:07:09.033, FindMany type[Project] origin[DM8B9Y.BWY1YJ.Cf-QNb] exeMicros[6509] rows[6] name[] predicates[u1.email = ? ] bind[guillaume@sample.com] 
+txn[1004], 23:07:09.050, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1004], 23:07:09.060, FindMany type[Task] origin[CPibuZ.BGCeS7.CFo7VC] exeMicros[9860] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1005], 23:07:09.081, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1005], 23:07:09.083, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[2462] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1006], 23:07:09.128, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1006], 23:07:09.130, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1720] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1007], 23:07:09.173, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1007], 23:07:09.174, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CFo7VC] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1141] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1008], 23:07:12.647, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1008], 23:07:12.649, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[2014] rows[3] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1009], 23:07:14.507, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1009], 23:07:14.508, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[1047] rows[0] name[] predicates[t0.project_id = ? ] bind[3] 
+txn[1010], 23:07:16.785, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1010], 23:07:16.789, FindMany type[Task] origin[CPibuZ.BGCeS7.CJebgr] exeMicros[4111] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1011], 23:07:16.801, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1011], 23:07:16.802, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1123] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1012], 23:07:16.828, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1012], 23:07:16.829, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[1558] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1013], 23:07:16.867, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1013], 23:07:16.868, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[706] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1014], 23:07:32.223, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1014], 23:07:32.225, FindMany type[Task] origin[Bm7UHd.BGCeS7.D4jzPe] exeMicros[1620] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1015], 23:07:35.240, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1015], 23:07:35.244, FindMany type[Task] origin[CPibuZ.BGCeS7.CJebgr] exeMicros[4236] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1016], 23:07:35.254, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1016], 23:07:35.255, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[775] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1017], 23:07:35.278, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1017], 23:07:35.279, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[679] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1018], 23:07:35.304, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1018], 23:07:35.305, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[656] rows[1] name[] predicates[t0.id = ?  ] bind[4] 
+txn[1019], 23:07:36.617, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1019], 23:07:36.619, FindMany type[Task] origin[Bm7UHd.BGCeS7.D4jzPe] exeMicros[1587] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1020], 23:07:38.755, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1020], 23:07:38.757, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[2012] rows[3] name[] predicates[t0.project_id = ? ] bind[2] 
+txn[1021], 23:07:39.884, select t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0  where t0.project_id = ?  
+txn[1021], 23:07:39.885, FindMany type[Task] origin[Bm7UHd.BGCeS7.B7NXT7] exeMicros[938] rows[2] name[] predicates[t0.project_id = ? ] bind[1] 
+txn[1022], 23:07:43.719, select distinct t0.id as c0, t0.title as c1, t0.done as c2, t0.due_date as c3, t0.folder as c4, t0.assigned_to_email as c5, t0.project_id as c6  from task t0 join project u1 on u1.id = t0.project_id  join project_account u2z_ on u2z_.project_id = u1.id  join account u2 on u2.email = u2z_.account_email   where t0.done = ?  and u2.email = ?  
+txn[1022], 23:07:43.724, FindMany type[Task] origin[CPibuZ.BGCeS7.CJebgr] exeMicros[4502] rows[5] name[] predicates[t0.done = ?  and u2.email = ? ] bind[false, guillaume@sample.com] 
+txn[1023], 23:07:43.734, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1023], 23:07:43.735, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[785] rows[1] name[] predicates[t0.id = ?  ] bind[1] 
+txn[1024], 23:07:43.757, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1024], 23:07:43.758, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[629] rows[1] name[] predicates[t0.id = ?  ] bind[2] 
+txn[1025], 23:07:43.781, select t0.id as c0, t0.name as c1, t0.folder as c2  from project t0  where t0.id = ?   
+txn[1025], 23:07:43.781, FindMany mode[+lazy] type[Project] origin[CPibuZ.BGCeS7.CJebgr] lazyLoadProp[name] load[path:project batch:1 actual:1] exeMicros[756] rows[1] name[] predicates[t0.id = ?  ] bind[4] 

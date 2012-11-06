@@ -333,11 +333,13 @@ public class Dashboard extends ParentController {
         }
 
         private void remove() {
+            /*
             for (TreeItem treeItem : this.getChildren()) {
                 if (!(treeItem instanceof ProjectItem)) continue;
                 ProjectItem projectItem = (ProjectItem)treeItem;
                 projectItem.remove();
-            }
+            */
+            Project.deleteInFolder(groupName.get());
             projectGroupRemoved(this);
         }
 
@@ -424,7 +426,7 @@ public class Dashboard extends ParentController {
             linkPane.getChildren().add(input);
         }
 
-        public void remove() {
+        private void remove() {
             project.delete();
             groupItem.projectRemoved(this);
         }
