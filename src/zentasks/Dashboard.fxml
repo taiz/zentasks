@@ -20,7 +20,7 @@
                 <children>
                   <Label id="top" fx:id="breadcrumbFirst" styleClass="breadcrumb-label" text="First">
                     <font>
-                      <Font name="Candara" size="20.0" fx:id="x3" />
+                      <Font size="20.0" fx:id="x4" />
                     </font>
                     <HBox.margin>
                       <Insets left="15.0" />
@@ -36,7 +36,7 @@
                       <Double fx:value="-60.0" />
                     </points>
                   </Polygon>
-                  <Label id="breadcrumbTop" fx:id="breadcrumbSecond" font="$x3" text="Second" />
+                  <Label id="breadcrumbTop" fx:id="breadcrumbSecond" font="$x4" text="Second" />
                   <Polygon fill="DODGERBLUE" rotate="90.0" scaleX="0.4" scaleY="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                     <points>
                       <Double fx:value="-50.0" />
@@ -47,6 +47,14 @@
                       <Double fx:value="-60.0" />
                     </points>
                   </Polygon>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                    <children>
+                      <Button fx:id="teamBtn" mnemonicParsing="false" onMouseClicked="#showTeamMenu" text="Project's team" />
+                    </children>
+                    <padding>
+                      <Insets right="10.0" fx:id="x3" />
+                    </padding>
+                  </HBox>
                 </children>
               </HBox>
               <VBox id="tasksPane" fx:id="taskBoradsPane" fillWidth="true" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="15.0">
@@ -113,15 +121,12 @@
                   <Insets left="15.0" />
                 </GridPane.margin>
               </HBox>
-              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <HBox alignment="CENTER_RIGHT" padding="$x3" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
                 <children>
                   <Label fx:id="userNameLabel" text="User Name" />
                   <Label fx:id="emailLabel" text="Email" />
                   <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#doLogout" text="Logout" />
                 </children>
-                <padding>
-                  <Insets right="10.0" />
-                </padding>
                 <GridPane.margin>
                   <Insets fx:id="x2" />
                 </GridPane.margin>

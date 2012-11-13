@@ -1,9 +1,6 @@
 package zentasks;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.SceneBuilder;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageBuilder;
 
@@ -14,9 +11,9 @@ import javafx.stage.StageBuilder;
 public abstract class ParentController extends Controller {
     protected Stage stage;
 
-    public Stage getStage() { return stage; }
+    Stage getStage() { return stage; }
 
-    public void setStage(Stage stage) { this.stage = stage; }
+    void setStage(Stage stage) { this.stage = stage; }
 
     protected void moveTo(ParentController parent) {
         if (stage == null) throw new RuntimeException("Stage is null");

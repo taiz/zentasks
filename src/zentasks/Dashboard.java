@@ -14,10 +14,14 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Popup;
+import javafx.stage.PopupBuilder;
+
 import zentasks.models.Project;
 import zentasks.models.Task;
 import zentasks.models.User;
@@ -87,11 +91,15 @@ public class Dashboard extends ParentController {
     private void buildProjectBoard() {
         buildBreadcrumb("Dashboard", "Tasks over all projects");
         buildTaskBoard();
+        newFolderBtn.setVisible(false);
+        teamBtn.setVisible(false);
     }
 
-    private void buildProjectBoard(Project project) {
+    void buildProjectBoard(Project project) {
         buildBreadcrumb(project);
         buildTaskBoard(project);
+        newFolderBtn.setVisible(true);
+        teamBtn.setVisible(true);
     }
     
     @FXML
@@ -109,12 +117,12 @@ public class Dashboard extends ParentController {
         } catch (FXMLLoadException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-        newFolderBtn.setVisible(false);
     }
     
     private Project currentProject;
+    private Popup teamMenu;
     
-    void buildTaskBoard(Project project) {
+    private void buildTaskBoard(Project project) {
         currentProject = project;
         taskBoradsPane.getChildren().clear();
 
@@ -129,7 +137,7 @@ public class Dashboard extends ParentController {
         } catch (FXMLLoadException ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-        newFolderBtn.setVisible(true);
+        teamMenu = createTeamMenu();
     }
 
     private ProjectBoard createProjectBorad(Project project, List<Task> tasks) throws FXMLLoadException {
@@ -171,7 +179,7 @@ public class Dashboard extends ParentController {
         taskBoradsPane.getChildren().add(board.getRoot());
     }
 
-    public void taskBoardRemoved(TaskBoard board) {
+    void taskBoardRemoved(TaskBoard board) {
         taskBoradsPane.getChildren().remove(board.getRoot());
     }
     
@@ -231,6 +239,66 @@ public class Dashboard extends ParentController {
         projectsTree.getRoot().getChildren().remove(groupItem);
     }
 
+    @FXML
+    private Button teamBtn;
+    
+    // Call from teamBtn (On Mouse Clicked)
+    @FXML
+    private void showTeamMenu(MouseEvent t) {
+        teamMenu.show(teamBtn, root.getScene().getWidth() - 50, 125);
+    }
+    
+    private Popup createTeamMenu() {
+         return PopupBuilder.create()
+                .autoHide(true)
+                .content(
+                    BorderPaneBuilder.create()
+                        //.spacing(5)
+                        .padding(new Insets(5,5,5,5))
+                        .children(
+                            //createTeamMemberTable(),
+                            //createRemainMemberTable()
+                        )
+                        .build()
+                 )
+                .build();
+    }
+    
+    private BorderPane createTeamMemberTable() {
+        return null;
+    }
+    
+    private BorderPane createRemainMemberTable() {
+        return null;
+    }
+    
+    /*
+    private BorderPane
+         popup;
+        List<User> remainMmbers = new ArrayList<User>();
+        VBox content = new VBox();
+        content.getChildren().add(new Label("Team mates"));
+        content.getChildren().add(new Separator());
+        for (User user : currentProject.getMembers()) {
+            Label name = new Label(user.getName());
+            Label email = new Label(user.getEmail());
+            GridPane grid = new GridPane();
+            grid.add(HBoxBuilder.create()
+                    .children(name, email)
+                    .build(), 0, 0);
+            grid.add(ButtonBuilder.create()
+                    .onAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent t) {
+                            removeUserFromProject(user);
+                        }
+                    })
+                    .build(), 0, 1);
+        }
+    }
+    * 
+    */
+    
     private class ProjectGroupItem extends TreeItem<BorderPane> {
         private StringProperty groupName = new SimpleStringProperty();
         private ContextMenu settingMenu;

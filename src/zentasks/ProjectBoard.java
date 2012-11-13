@@ -18,13 +18,12 @@ import zentasks.models.Task;
 public class ProjectBoard extends Controller {
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    }
+    public void initialize(URL url, ResourceBundle rb) {}
 
     private Dashboard dashboard;
     
     // Call from Dashboard
-    public void setDashboard(Dashboard dashboard) {
+    void setDashboard(Dashboard dashboard) {
         this.dashboard = dashboard;
     }
 
@@ -33,12 +32,12 @@ public class ProjectBoard extends Controller {
     
     @FXML
     private void showTasks() {
-        dashboard.buildTaskBoard(project);
+        dashboard.buildProjectBoard(project);
     }
     private Project project;
     
     // Call from Dahsborad
-    public void setProject(Project project) {
+    void setProject(Project project) {
         this.project = project;
         this.projectLink.setText(project.getName());
     }
@@ -47,7 +46,7 @@ public class ProjectBoard extends Controller {
     private VBox taskItemsPane;
     
     // Call from Dahsborad
-    public void setTasks(List<Task> tasks) {
+    void setTasks(List<Task> tasks) {
         taskItemsPane.getChildren().clear();
         try {
             for (Task task : tasks) {

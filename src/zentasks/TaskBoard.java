@@ -40,7 +40,7 @@ public class TaskBoard extends Controller {
     }
 
     // Call from Dahsborad
-    public void setProject(Project project) { this.project = project; }
+    void setProject(Project project) { this.project = project; }
 
     @FXML
     private CheckBox doneCheckBox;
@@ -58,7 +58,7 @@ public class TaskBoard extends Controller {
     private StringProperty folderName = new SimpleStringProperty();
 
     // Call from Dahsborad
-    public void setFolderName(String folderName) { this.folderName.set(folderName); }
+    void setFolderName(String folderName) { this.folderName.set(folderName); }
 
     @FXML
     private Label remainLabel;
@@ -159,7 +159,7 @@ public class TaskBoard extends Controller {
     private ObservableList<TaskPane> taskPanes = FXCollections.observableArrayList();
 
     // Call from Dashboard
-    public void setTasks(List<Task> tasks) {
+    void setTasks(List<Task> tasks) {
         try {
             for (Task task : tasks) {
                 addTaskPane(createTaskPane(task));
@@ -171,7 +171,7 @@ public class TaskBoard extends Controller {
     
     private Dashboard dashboard;
     
-    public void setDashboard(Dashboard dashboard) {
+    void setDashboard(Dashboard dashboard) {
         this.dashboard = dashboard;
     }
 
@@ -187,11 +187,11 @@ public class TaskBoard extends Controller {
         taskItemsPane.getChildren().add(taskPane.getRoot());
     }
 
-    public void taskChanged(TaskPane taskPane) {
+    void taskChanged(TaskPane taskPane) {
         updateRemainLabel();
     }
 
-    public void taskRemoved(TaskPane taskPane) {
+    void taskRemoved(TaskPane taskPane) {
         taskPanes.remove(taskPane);
         taskItemsPane.getChildren().remove(taskPane.getRoot());
         updateRemainLabel();
@@ -200,7 +200,7 @@ public class TaskBoard extends Controller {
     @FXML
     private StackPane folderPane;
 
-    public void acceptEdit() {
+    void acceptEdit() {
         final TextField input = TextFieldBuilder.create().build();
         input.textProperty().bindBidirectional(folderName);
         input.setOnAction(new EventHandler<ActionEvent>() {

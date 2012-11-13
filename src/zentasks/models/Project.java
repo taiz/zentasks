@@ -21,7 +21,7 @@ public class Project {
     private List<Task> tasks;
 
     @ManyToMany
-    public List<User> members = new ArrayList<User>();
+    private List<User> members = new ArrayList<User>();
 
     public Project() {}
 

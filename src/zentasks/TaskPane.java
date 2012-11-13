@@ -9,7 +9,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -61,13 +60,13 @@ public class TaskPane extends Controller {
         remove();
     }
     
-    public void remove() {
+    void remove() {
         task.delete();
         taskBoard.taskRemoved(this);
     }
     
     // Call from Dahsborad
-    public void setTask(Task task) {
+    void setTask(Task task) {
         this.task = task;
         taskItem.setTask(task);
         doneProperty.set(task.isDone());
@@ -75,15 +74,15 @@ public class TaskPane extends Controller {
     }
 
     // Call from Dahsborad
-    public void setTaskBoard(TaskBoard taskBoard) {
+    void setTaskBoard(TaskBoard taskBoard) {
         this.taskBoard = taskBoard;
     }
     
-    public boolean isDone() {
+    boolean isDone() {
         return task.isDone();
     }
     
-    public void setDone(boolean done) {
+    void setDone(boolean done) {
         doneProperty.set(done);
     }
 }

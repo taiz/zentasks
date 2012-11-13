@@ -36,6 +36,10 @@ public class User {
             .findUnique();
     }
     
+    public static List<User> findAll() {
+        return Ebean.find(User.class).findList();
+    }
+    
     public static User find(String email) {
         return Ebean.find(User.class, email);
     }

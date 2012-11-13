@@ -27,7 +27,7 @@ public class TaskItem extends Controller {
     @FXML
     private HBox detailsPane;
     
-    public void setTask(Task task) {
+    void setTask(Task task) {
         this.task = task;
         titleLabel.setText(task.getTitle());
         if (task.getAssignedTo() != null)
