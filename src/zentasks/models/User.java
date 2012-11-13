@@ -36,12 +36,15 @@ public class User {
             .findUnique();
     }
     
-    public static List<User> findAll() {
-        return Ebean.find(User.class).findList();
-    }
-    
     public static User find(String email) {
         return Ebean.find(User.class, email);
+    }
+    
+    public static List<User> findExcluded(List<User> users) {
+        List<String> emails = new ArrayList<String>();
+        for (User user : users) emails.add(user.email);
+        return Ebean.find(User.class).where()
+                .not(Expr.in("email", emails)).findList();
     }
     
     public String getEmail() {

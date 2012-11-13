@@ -245,32 +245,147 @@ public class Dashboard extends ParentController {
     // Call from teamBtn (On Mouse Clicked)
     @FXML
     private void showTeamMenu(MouseEvent t) {
-        teamMenu.show(teamBtn, root.getScene().getWidth() - 50, 125);
+        teamMenu.show(teamBtn, root.getScene().getWidth() - teamBtn.getPrefWidth() - 30, 130);
+        teamMenu.show(root.getScene().getWindow());
     }
     
-    private Popup createTeamMenu() {
-         return PopupBuilder.create()
-                .autoHide(true)
-                .content(
-                    BorderPaneBuilder.create()
-                        //.spacing(5)
-                        .padding(new Insets(5,5,5,5))
-                        .children(
-                            //createTeamMemberTable(),
-                            //createRemainMemberTable()
-                        )
+    private Popup createTeamMenu() {       
+        return PopupBuilder.create()
+                 .autoHide(true)
+                 .content(new MembersList())
+                 .build();
+    }
+    
+    private class MembersList extends VBox {
+        private VBox teamMembersList = new VBox();
+        private VBox remainMembersList = new VBox();
+        
+        MembersList() {
+            List<User> projectMembers = currentProject.getMembers();
+            List<User> remainUsers = User.findExcluded(projectMembers);
+            setPadding(new Insets(5,5,5,5));
+            setSpacing(5);
+            setOpacity(0.8);
+            this.setPrefWidth(300);
+            this.setStyle("-fx-background-color:black;");
+            getChildren().addAll(teamMembersList, remainMembersList);
+            createTeamMembersList(projectMembers);
+            createRemainMembersList(remainUsers);
+        }
+        
+        private void createTeamMembersList(List<User> users) {
+            teamMembersList.getChildren().add(LabelBuilder.create()
+                        .text("Team Mates")
                         .build()
-                 )
+                    );
+            for (User user : users)
+                teamMembersList.getChildren().add(new TeamMemberItem(this, user));
+        }
+        
+        private void createRemainMembersList(List<User> users) {
+            remainMembersList.getChildren().add(LabelBuilder.create()
+                        .text("Team Mates")
+                        .build()
+                    );
+            for (User user : users)
+                remainMembersList.getChildren().add(new RemainMemberItem(this, user));
+        }
+        
+        public void addMemberItem(MemberItem item) {
+            currentProject.getMembers().add(item.getUser());
+            currentProject.save();
+            teamMembersList.getChildren().add(item);
+            remainMembersList.getChildren().remove(item);
+        }
+        
+        public void addRemainItem(MemberItem item) {
+            currentProject.getMembers().remove(item.getUser());
+            currentProject.save();
+            remainMembersList.getChildren().add(item);
+            teamMembersList.getChildren().remove(item);
+        }
+    }
+    
+    private abstract class MemberItem extends BorderPane {
+        protected MembersList list;
+        private User user;
+        
+        MemberItem(MembersList list, User user) {
+            this.list = list;
+            this.user = user;
+            setCenter(VBoxBuilder.create().children(
+                    HBoxBuilder.create()
+                        .children(
+                            LabelBuilder.create().text(user.getName()).style("").build(),
+                            LabelBuilder.create().text("(" + user.getEmail() + ")").style("").build()
+                        )
+                    .build()
+                )
+                .build()
+            );
+        }
+        
+        User getUser() { return user; }
+    }
+    
+    private class TeamMemberItem extends MemberItem {
+        TeamMemberItem(final MembersList list, User user) {
+            super(list, user);
+            setRight(ButtonBuilder.create()
+                    .style("")
+                    .onAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent t) {
+                            list.addRemainItem(TeamMemberItem.this);
+                        }
+                    })
+                    .build()
+            );
+        }
+    }
+    
+    private class RemainMemberItem extends MemberItem {
+        RemainMemberItem(final MembersList list, User user) {
+            super(list, user);
+            setRight(ButtonBuilder.create()
+                    .style("")
+                    .onAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent t) {
+                            list.addMemberItem(RemainMemberItem.this);
+                        }
+                    })
+                    .build()
+            );
+        }
+    }
+    
+    /*
+    private VBox createMembersList() {
+        List<User> projectMembers = currentProject.getMembers();
+        List<User> remainUsers = User.findExcluded(projectMembers);
+        return VBoxBuilder.create()
+                .padding(new Insets(5,5,5,5))
+                .spacing(5)
+                .children(
+                    createTeamMembersList(projectMembers),
+                    createRemainMembersList(projectMembers)
+                )
                 .build();
     }
     
-    private BorderPane createTeamMemberTable() {
-        return null;
+    private VBox createTeamMembersList(List<User> users) {
+        VBox list = new VBox();
+        list.getChildren().add(LabelBuilder.create()
+                    .text("Team Mates")
+                    .build()
+                );
+        for (User user : users) {
+            
+        }
+        return list;
     }
-    
-    private BorderPane createRemainMemberTable() {
-        return null;
-    }
+    */
     
     /*
     private BorderPane
