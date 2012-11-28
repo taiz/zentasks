@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" styleClass="root" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.Dashboard">
-  <ScrollPane id="root" fitToHeight="false" fitToWidth="false" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="-1.0" styleClass="root" vbarPolicy="AS_NEEDED" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.Dashboard">
+  <ScrollPane id="root" fitToHeight="false" fitToWidth="false" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="1024.0" vbarPolicy="AS_NEEDED" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
     <content>
       <BorderPane prefHeight="690.0" prefWidth="1024.0">
         <center>
-          <VBox prefHeight="-1.0" prefWidth="-1.0" styleClass="treepane">
+          <VBox prefHeight="-1.0" prefWidth="-1.0">
             <children>
               <HBox fx:id="breadcrumbPane" alignment="CENTER_LEFT" minHeight="45.0" prefHeight="40.0" prefWidth="774.0" style="&#10;" styleClass="breadcrumb">
                 <children>
@@ -29,41 +26,27 @@
                       <Insets left="15.0" />
                     </HBox.margin>
                   </Label>
-                  <HBox prefHeight="-1.0" prefWidth="-1.0">
-                    <children>
-                      <Polygon rotate="90.0" scaleX="0.39999999999960006" scaleY="0.30000029999999245" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="triangle">
-                        <effect>
-                          <BoxBlur />
-                        </effect>
-                        <fill>
-                          <Color blue="0.769" green="0.788" red="0.612" fx:id="x5" />
-                        </fill>
-                        <points>
-                          <Double fx:value="-50.0" />
-                          <Double fx:value="40.0" />
-                          <Double fx:value="50.0" />
-                          <Double fx:value="40.0" />
-                          <Double fx:value="0.0" />
-                          <Double fx:value="-60.0" />
-                        </points>
-                      </Polygon>
-                    </children>
-                  </HBox>
-                  <Label id="breadcrumbTop" fx:id="breadcrumbSecond" font="$x4" styleClass="breadcrumb-label" text="Second" />
-                  <HBox prefHeight="-1.0" prefWidth="-1.0">
-                    <children>
-                      <Polygon fill="$x5" rotate="90.0" scaleX="0.4" scaleY="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="triangle">
-                        <points>
-                          <Double fx:value="-50.0" />
-                          <Double fx:value="40.0" />
-                          <Double fx:value="50.0" />
-                          <Double fx:value="40.0" />
-                          <Double fx:value="0.0" />
-                          <Double fx:value="-60.0" />
-                        </points>
-                      </Polygon>
-                    </children>
-                  </HBox>
+                  <Polygon fill="DODGERBLUE" rotate="90.0" scaleX="0.4" scaleY="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                    <points>
+                      <Double fx:value="-50.0" />
+                      <Double fx:value="40.0" />
+                      <Double fx:value="50.0" />
+                      <Double fx:value="40.0" />
+                      <Double fx:value="0.0" />
+                      <Double fx:value="-60.0" />
+                    </points>
+                  </Polygon>
+                  <Label id="breadcrumbTop" fx:id="breadcrumbSecond" font="$x4" text="Second" />
+                  <Polygon fill="DODGERBLUE" rotate="90.0" scaleX="0.4" scaleY="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                    <points>
+                      <Double fx:value="-50.0" />
+                      <Double fx:value="40.0" />
+                      <Double fx:value="50.0" />
+                      <Double fx:value="40.0" />
+                      <Double fx:value="0.0" />
+                      <Double fx:value="-60.0" />
+                    </points>
+                  </Polygon>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                     <children>
                       <Button fx:id="teamBtn" mnemonicParsing="false" onMouseClicked="#showTeamMenu" text="Project's team" />
@@ -120,16 +103,16 @@
           </VBox>
         </left>
         <top>
-          <GridPane prefHeight="40.0" styleClass="header" BorderPane.margin="$x2">
+          <GridPane BorderPane.margin="$x2">
             <children>
               <HBox id="title" fx:id="pageTitle" alignment="CENTER" onMouseClicked="#reloadAll" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
                 <children>
-                  <Text fill="#66a3ff" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-zen" text="ZEN">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-zen" text="ZEN">
                     <font>
                       <Font name="Candara Bold" size="20.0" fx:id="x1" />
                     </font>
                   </Text>
-                  <Text fill="WHITE" font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-tasks" text="TASKS" />
+                  <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title, title-tasks" text="TASKS" />
                 </children>
                 <padding>
                   <Insets fx:id="x2" />
@@ -161,8 +144,4 @@
       </BorderPane>
     </content>
   </ScrollPane>
-  <stylesheets>
-    <URL value="@Common.css" />
-    <URL value="@Dashboard.css" />
-  </stylesheets>
 </AnchorPane>
