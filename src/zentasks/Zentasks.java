@@ -20,7 +20,9 @@ public class Zentasks extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Login login = (Login)Util.loadFXML(getClass().getResourceAsStream("Login.fxml"));
+        System.out.println(getClass().getResource("Login.fxml"));
+        //Login login = (Login)Util.loadFXML(getClass().getResource("Login.fxml"), getClass().getResourceAsStream("Login.fxml"));
+        Login login = (Login)Util.loadFXML(getClass().getResourceAsStream("Login.fxml"), getClass().getResource("Login.fxml"));
         login.setStage(stage);
         stage.setScene(new Scene(login.getRoot()));
         stage.show();
