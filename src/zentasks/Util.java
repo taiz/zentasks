@@ -1,6 +1,7 @@
 package zentasks;
 
 import java.io.*;
+import java.net.URL;
 import javafx.fxml.FXMLLoader;
 
 /**
@@ -10,15 +11,16 @@ import javafx.fxml.FXMLLoader;
 public class Util {
     public static Object loadFXML(Object o, String path) throws FXMLLoadException {
         try {
-            return loadFXML(o.getClass().getResourceAsStream(path));
+            URL url = o.getClass().getResource(path);
+            return loadFXML(o.getClass().getResourceAsStream(path), url);
         } catch (FXMLLoadException ex) {
             throw new FXMLLoadException("Failed to load" + path, ex);
         }
     }
     
-    public static Object loadFXML(InputStream is) throws FXMLLoadException {
+    public static Object loadFXML(InputStream is, URL url) throws FXMLLoadException {
         try {
-            FXMLLoader loader = new FXMLLoader();
+            FXMLLoader loader = new FXMLLoader(url);
             loader.load(is);
             return loader.getController();
         } catch (IOException ex) {

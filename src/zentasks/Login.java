@@ -71,7 +71,7 @@ public class Login extends ParentController {
         showMessage(
                 LabelBuilder.create()
                     .text(message)
-                    .styleClass("info-message")
+                    .styleClass("message-info")
                     .build()
                 );
     }
@@ -80,7 +80,7 @@ public class Login extends ParentController {
         showMessage(
                 LabelBuilder.create()
                     .text(message)
-                    .styleClass("error-message")
+                    .styleClass("message-error")
                     .build()
                 );
     }
