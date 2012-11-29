@@ -10,6 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
+<BorderPane fx:id="root" prefHeight="700.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.Login">
   <center>
     <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0">
       <children>
@@ -25,7 +26,7 @@
                     <Insets bottom="5.0" top="20.0" />
                   </VBox.margin>
                 </Label>
-                <StackPane fx:id="messagePane" prefHeight="-1.0" prefWidth="-1.0">
+                <StackPane fx:id="messagePane" prefHeight="-1.0" prefWidth="-1.0" >
                   <VBox.margin>
                     <Insets fx:id="x2" />
                   </VBox.margin>
