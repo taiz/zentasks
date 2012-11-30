@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import zentasks.models.Task;
 
@@ -58,6 +59,16 @@ public class TaskPane extends Controller {
     @FXML
     private void removeTask(ActionEvent event) {
         remove();
+    }
+    
+    @FXML
+    private void showRemoveBtn(MouseEvent evnet) {
+        removeBtn.setOpacity(1.0);
+    }
+    
+    @FXML
+    private void shadowRemoveBtn(MouseEvent evnet) {
+        removeBtn.setOpacity(0.5);
     }
     
     void remove() {

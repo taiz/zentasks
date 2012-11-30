@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
@@ -10,20 +11,24 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.ProjectBoard">
+<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="750.0" styleClass="project-board" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.ProjectBoard">
   <children>
     <HBox alignment="CENTER_LEFT" minWidth="-1.0" prefHeight="30.0" prefWidth="-1.0" spacing="10.0">
       <children>
-        <Hyperlink fx:id="projectLink" onAction="#showTasks" text="Project Name" />
+        <Hyperlink fx:id="projectLink" onAction="#showTasks" styleClass="project-link" text="Project Name" />
       </children>
       <padding>
         <Insets left="10.0" fx:id="x1" />
       </padding>
     </HBox>
-    <VBox id="tasks" fx:id="taskItemsPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+    <VBox id="tasks" fx:id="taskItemsPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0" styleClass="task-item">
       <VBox.margin>
-        <Insets bottom="5.0" top="5.0" />
+        <Insets top="5.0" />
       </VBox.margin>
     </VBox>
   </children>
+  <stylesheets>
+    <URL value="@Common.css" />
+    <URL value="@ProjectBoard.css" />
+  </stylesheets>
 </VBox>

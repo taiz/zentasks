@@ -66,7 +66,7 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                     <children>
-                      <Button fx:id="teamBtn" mnemonicParsing="false" onMouseClicked="#showTeamMenu" text="Project's team" />
+                      <Button fx:id="teamBtn" defaultButton="true" mnemonicParsing="false" onMouseClicked="#showTeamMenu" text="Project's team" />
                     </children>
                     <padding>
                       <Insets right="10.0" fx:id="x3" />
@@ -79,7 +79,7 @@
                   <Insets left="15.0" right="15.0" top="15.0" />
                 </VBox.margin>
               </VBox>
-              <Button id="new" fx:id="newFolderBtn" mnemonicParsing="false" onAction="#addNewFolder" text="New Folder">
+              <Button id="new" fx:id="newFolderBtn" defaultButton="true" mnemonicParsing="false" onAction="#addNewFolder" text="New Folder">
                 <VBox.margin>
                   <Insets bottom="20.0" left="15.0" top="20.0" />
                 </VBox.margin>
@@ -93,20 +93,20 @@
               <HBox alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="3.0">
                 <children>
                   <ImageView id="dahshboradImage" fx:id="dahshboardImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                  <Hyperlink id="dashboard" fx:id="dashboardLink" onAction="#reloadProjectBoard" text="DASHBOARD" />
+                  <Hyperlink id="dashboard" fx:id="dashboardLink" onAction="#reloadProjectBoard" styleClass="dashboard-link" text="DASHBOARD" />
                 </children>
                 <VBox.margin>
                   <Insets left="5.0" right="5.0" top="10.0" />
                 </VBox.margin>
               </HBox>
-              <TreeView id="projectTree" fx:id="projectsTree" prefHeight="428.0" prefWidth="240.00009999999747" showRoot="false" VBox.vgrow="ALWAYS">
+              <TreeView id="projectTree" fx:id="projectsTree" prefHeight="428.0" prefWidth="240.00009999999747" showRoot="false" styleClass="root" VBox.vgrow="ALWAYS">
                 <VBox.margin>
                   <Insets left="5.0" right="5.0" />
                 </VBox.margin>
               </TreeView>
               <HBox alignment="TOP_LEFT" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                 <children>
-                  <Button id="newGroup" fx:id="newGroupBtn" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#addNewProjectGroup" text="New Group" HBox.hgrow="NEVER">
+                  <Button id="newGroup" fx:id="newGroupBtn" cancelButton="false" defaultButton="true" disable="false" mnemonicParsing="false" onAction="#addNewProjectGroup" text="New Group" HBox.hgrow="NEVER">
                     <HBox.margin>
                       <Insets left="30.0" />
                     </HBox.margin>
@@ -140,9 +140,9 @@
               </HBox>
               <HBox alignment="CENTER_RIGHT" padding="$x3" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
                 <children>
-                  <Label fx:id="userNameLabel" text="User Name" />
-                  <Label fx:id="emailLabel" text="Email" />
-                  <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#doLogout" text="Logout" />
+                  <Label fx:id="userNameLabel" styleClass="userlabel, userlabel-name" text="User Name" />
+                  <Label fx:id="emailLabel" styleClass="userlabel, userlabel-email" text="Email" />
+                  <Button fx:id="logoutBtn" defaultButton="true" mnemonicParsing="false" onAction="#doLogout" text="Logout" />
                 </children>
                 <GridPane.margin>
                   <Insets fx:id="x2" />

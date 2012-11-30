@@ -15,10 +15,26 @@
     -fx-text-fill: rgb(105, 105, 105);
 }
 
+.dashboard-link {
+    -fx-text-fill: rgb(105, 105, 105);
+    -fx-font-weight: bold;   
+}
+
 .treepane {
     -fx-border-color: #445868;    
 }
 
 .triangle {
     -fx-effect: dropshadow( one-pass-box , #C0C0C0 , 10 , 10 , 10 , 0);
+}
+
+.userlabel-name {
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.userlabel-email {
+    -fx-text-fill: silver;
+    -fx-font-size: 12;
 }

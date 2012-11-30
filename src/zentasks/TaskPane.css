@@ -1,0 +1,26 @@
+/* 
+    Document   : ProjectBoard
+    Created on : 2012/11/29, 13:27:43
+    Author     : miyabetaiji
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.project-board {
+    -fx-background-radius: 4px;
+    -fx-background-color: whitesmoke;
+}
+
+.project-link {
+    -fx-text-fill: dodgerblue;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.remove-btn {
+    -fx-background-color: white;   
+    -fx-background-radius: 5px;
+    -fx-content-display: graphic-only;
+    -fx-background-color: white;
+    -fx-graphic: url("../images/close.jpg");
+}

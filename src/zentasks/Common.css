@@ -22,3 +22,8 @@
     -fx-effect: dropshadow( one-pass-box , #C0C0C0 , 1 , 1 , 1 , 1 );
 }
 
+/*
+.white-check-box {
+    -fx-background-color: white;
+}
+*/

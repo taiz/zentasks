@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Separator;
 import javafx.scene.layout.VBox;
 import zentasks.models.Project;
 import zentasks.models.Task;
@@ -51,6 +52,7 @@ public class ProjectBoard extends Controller {
         try {
             for (Task task : tasks) {
                 TaskItem taskItem = createTaskItem(task);
+                taskItemsPane.getChildren().add(new Separator());
                 taskItemsPane.getChildren().add(taskItem.getRoot());
             }
         } catch (FXMLLoadException ex) {

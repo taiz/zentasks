@@ -17,6 +17,8 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Popup;
@@ -460,7 +462,17 @@ public class Dashboard extends ParentController {
         }
 
         private Button createButton() {
-            final Button btn = ButtonBuilder.create().opacity(0.5).build();
+            final Button btn = ButtonBuilder.create()
+                    .contentDisplay(ContentDisplay.GRAPHIC_ONLY)
+                    .minWidth(20.0)
+                    .prefWidth(20.0)
+                    .style("-fx-background-color: white; -fx-background-radius: 5")
+                    //.minHeight(0.0).prefHeight(0.0)
+                    .graphic(new ImageView(new Image(
+                        Thread.currentThread().getContextClassLoader().getResourceAsStream("images/settings.jpg")
+                    )))
+                    .opacity(0.5)
+                    .build();
             btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent t) {
@@ -545,7 +557,7 @@ public class Dashboard extends ParentController {
             BorderPane pane = BorderPaneBuilder.create().build();
             linkPane = createLinkPane();
             pane.setCenter(linkPane);
-            pane.setAlignment(linkPane, Pos.CENTER_LEFT);
+            BorderPane.setAlignment(linkPane, Pos.CENTER_LEFT);
             final Button deleteBtn = createButton();
             pane.setRight(deleteBtn);
             pane.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -587,7 +599,30 @@ public class Dashboard extends ParentController {
         }
         
         private Button createButton() {
-            Button btn = ButtonBuilder.create().visible(false).build();
+            final Button btn = ButtonBuilder.create()
+                    .visible(false)
+                    .contentDisplay(ContentDisplay.GRAPHIC_ONLY)
+                    .minWidth(20.0)
+                    .prefWidth(20.0)
+                    .opacity(0.5)
+                    .style("-fx-background-color: white; -fx-background-radius: 5")
+                    //.minHeight(0.0).prefHeight(0.0)
+                    .graphic(new ImageView(new Image(
+                        Thread.currentThread().getContextClassLoader().getResourceAsStream("images/close.jpg")
+                    )))
+                    .build();
+            btn.setOnMouseEntered(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent t) {
+                        btn.setOpacity(1.0);
+                    }
+            });
+            btn.setOnMouseExited(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent t) {
+                        btn.setOpacity(0.5);
+                    }
+            });
             btn.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent t) { remove(); }
