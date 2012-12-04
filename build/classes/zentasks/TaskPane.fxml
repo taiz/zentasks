@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane fx:id="root" prefHeight="30.0" prefWidth="750.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskPane">
+  <left>
+    <CheckBox id="doneCheck" fx:id="doneCheckBox" mnemonicParsing="false" styleClass="white-check-box" text="" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
+        <Insets left="10.0" />
+      </BorderPane.margin>
+    </CheckBox>
+  </left>
+  <right>
+    <Button fx:id="removeBtn" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeTask" onMouseEntered="#showRemoveBtn" onMouseExited="#shadowRemoveBtn" opacity="0.5" prefWidth="24.0" styleClass="remove-btn" text="" BorderPane.alignment="CENTER">
+      <BorderPane.margin>
+        <Insets right="5.0" />
+      </BorderPane.margin>
+    </Button>
+  </right>
+  <stylesheets>
+    <URL value="@TaskPane.css" />
+  </stylesheets>
+  <top>
+    <Separator prefWidth="200.0" />
+  </top>
+</BorderPane>

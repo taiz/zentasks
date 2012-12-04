@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="AnchorPane" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="750.0" style="" styleClass="task-board" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskBoard">
+  <children>
+    <BorderPane prefHeight="30.0" prefWidth="200.0">
+      <center>
+        <HBox alignment="CENTER_LEFT" minWidth="50.0" prefHeight="30.0" prefWidth="-1.0" spacing="10.0" BorderPane.alignment="CENTER_LEFT">
+          <children>
+            <CheckBox id="completed" fx:id="doneCheckBox" mnemonicParsing="false" styleClass="white-check-box" text="" />
+            <StackPane fx:id="folderPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Label id="groupName" fx:id="folderLabel" text="FolderName" StackPane.alignment="CENTER_LEFT" />
+              </children>
+            </StackPane>
+            <StackPane prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="" />
+                <Label id="remain" fx:id="remainLabel" style="-fx-text-fill: white;&#10;" text="0">
+                  <font>
+                    <Font size="10.0" />
+                  </font>
+                </Label>
+              </children>
+            </StackPane>
+          </children>
+          <padding>
+            <Insets left="10.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </center>
+      <right>
+        <Button id="operations" fx:id="taskOperationBtn" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#showMenu" prefWidth="30.0" styleClass="setting-button" text="" BorderPane.alignment="CENTER_RIGHT">
+          <BorderPane.margin>
+            <Insets right="5.0" fx:id="x2" />
+          </BorderPane.margin>
+        </Button>
+      </right>
+    </BorderPane>
+    <VBox fx:id="taskItemsPane" alignment="CENTER_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="0.0" styleClass="task-item" />
+    <HBox alignment="CENTER_LEFT" padding="$x1" prefHeight="30.0" prefWidth="-1.0" spacing="10.0" style="-fx-background-color: white;">
+      <children>
+        <TextField id="newTask" fx:id="newTaskText" focusTraversable="true" onAction="#registerNewTask" prefWidth="-1.0" promptText="New tasks..." style="-fx-border-width: 0;" HBox.hgrow="ALWAYS" />
+        <Label text="" HBox.hgrow="ALWAYS" HBox.margin="$x2" />
+        <ChoiceBox HBox.hgrow="SOMETIMES" HBox.margin="$x2">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="アイテム1" />
+              <String fx:value="アイテム2" />
+              <String fx:value="アイテム3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@TaskBoard.css" />
+  </stylesheets>
+</VBox>

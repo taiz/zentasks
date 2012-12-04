@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="zentasks2.jnlp">
+  <information>
+    <title>zentasks2</title>
+    <vendor>miyabetaiji</vendor>
+    <description>Sample JavaFX 2.0 application.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="2.0+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib/ebean-2.7.3.jar" size="2118517" download="eager" />
+    <jar href="lib/persistence-api-1.0.jar" size="62769" download="eager" />
+    <jar href="lib/postgresql-9.1-902.jdbc4.jar" size="586393" download="eager" />
+    <jar href="lib/sqlite-jdbc-3.7.2.jar" size="3218823" download="eager" />
+    <jar href="zentasks2.jar" size="89218" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="zentasks2" >
+    <param name="requiredFXVersion" value="2.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="zentasks.Zentasks"  name="zentasks2" />
+  <update check="background"/>
+</jnlp>

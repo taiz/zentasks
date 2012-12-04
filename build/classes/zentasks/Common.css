@@ -1,0 +1,29 @@
+/* 
+    Document   : Common.css
+    Created on : 2012/11/16, 22:16:46
+    Author     : miyabetaiji
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.root {
+    -fx-background-color: #c7d1d8;
+}
+
+.header {
+    -fx-background-color: #445868;
+}
+
+.title {
+    -fx-font-size: 18;
+    -fx-font-family: serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( one-pass-box , #C0C0C0 , 1 , 1 , 1 , 1 );
+}
+
+/*
+.white-check-box {
+    -fx-background-color: white;
+}
+*/

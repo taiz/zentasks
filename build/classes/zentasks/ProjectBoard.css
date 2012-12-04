@@ -1,0 +1,24 @@
+/* 
+    Document   : ProjectBoard
+    Created on : 2012/11/29, 13:27:43
+    Author     : miyabetaiji
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.project-board {
+    -fx-background-radius: 3px;
+    -fx-background-color: aliceblue;
+}
+
+.project-link {
+    -fx-text-fill: dodgerblue;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.task-item {
+    /*-fx-background-color: gainsboro;*/
+    -fx-background-color: #F5F5F5;
+}
+

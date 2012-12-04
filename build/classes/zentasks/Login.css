@@ -1,0 +1,53 @@
+/* 
+    Document   : Common.css
+    Created on : 2012/11/16, 22:16:46
+    Author     : miyabetaiji
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#sign-pane {
+    -fx-background-color: #fff;
+    -fx-background-radius: 7px;
+    -fx-effect: dropshadow( one-pass-box , #808080 , 1 , 1 , 1 , 1 );
+}
+
+.sign-in {
+    -fx-font-size: 20;
+    -fx-font-family: sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #445868;
+}
+
+.text-input {
+    -fx-font-size: 14;
+    -fx-background-color: #F5F5F5;
+    -fx-border-radius: 4px;
+    -fx-border-color: #C0C0C0;
+}
+
+.login-btn {
+    -fx-font-size: 14;
+    -fx-text-fill: #ffff;
+    /*-fx-background-color: linear-gradient(to bottom, rgb(100, 100, 100), #445868);*/
+    -fx-effect: dropshadow( one-pass-box , #808080 , 1 , 1 , 1 , 1 );
+}
+
+.message-info {
+    -fx-font-size: 14;
+    -fx-text-fill: #32CD32;
+}
+
+.message-error {
+    -fx-font-size: 14;
+    -fx-text-fill: #FF0000;
+}
+
+.explanation {
+    /*-fx-text-fill: #445868;*/
+    -fx-text-fill: rgb(50, 50, 50)
+}
+
+.explanation-strong {
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<HBox fx:id="root" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="750.0" spacing="10.0" xmlns:fx="http://javafx.com/fxml" fx:controller="zentasks.TaskItem">
+  <children>
+    <Label fx:id="titleLabel" text="ToDo" />
+    <HBox id="detailPane" fx:id="detailsPane" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+      <padding>
+        <Insets right="15.0" />
+      </padding>
+    </HBox>
+  </children>
+  <padding>
+    <Insets left="10.0" fx:id="x1" />
+  </padding>
+  <stylesheets>
+    <URL value="@TaskItem.css" />
+  </stylesheets>
+</HBox>
